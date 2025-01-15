@@ -1,0 +1,6 @@
+body {
+    background-image: url('/src/Images/fundo_pag.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}

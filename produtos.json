@@ -1,0 +1,165 @@
+{
+    "produtos": [
+      {
+        "id": 1,
+        "categoria": "ração",
+        "nome": "Ração Premium para Cães",
+        "descricao": "Ração de alta qualidade para cães adultos.",
+        "preco": 89.99,
+        "imagem": "https://example.com/images/racao-cao-premium.jpg"
+      },
+      {
+        "id": 2,
+        "categoria": "ração",
+        "nome": "Ração para Gatos Adultos",
+        "descricao": "Ração rica em nutrientes para gatos adultos.",
+        "preco": 79.90,
+        "imagem": "https://example.com/images/racao-gato-adulto.jpg"
+      },
+      {
+        "id": 3,
+        "categoria": "ração",
+        "nome": "Ração para Filhotes de Cães",
+        "descricao": "Ração especialmente desenvolvida para filhotes.",
+        "preco": 69.90,
+        "imagem": "https://example.com/images/racao-cao-filhote.jpg"
+      },
+      {
+        "id": 4,
+        "categoria": "ração",
+        "nome": "Ração para Gatos Filhotes",
+        "descricao": "Ração balanceada para gatos filhotes.",
+        "preco": 64.50,
+        "imagem": "https://example.com/images/racao-gato-filhote.jpg"
+      },
+      {
+        "id": 5,
+        "categoria": "brinquedo",
+        "nome": "Osso de Brinquedo",
+        "descricao": "Brinquedo resistente e divertido para cães.",
+        "preco": 24.90,
+        "imagem": "https://example.com/images/osso-brinquedo.jpg"
+      },
+      {
+        "id": 6,
+        "categoria": "brinquedo",
+        "nome": "Bola para Gatos",
+        "descricao": "Bola com guizo para entreter seu gato.",
+        "preco": 14.90,
+        "imagem": "https://example.com/images/bola-gato.jpg"
+      },
+      {
+        "id": 7,
+        "categoria": "brinquedo",
+        "nome": "Corda para Cães",
+        "descricao": "Corda para brincadeiras de puxar.",
+        "preco": 29.90,
+        "imagem": "https://example.com/images/corda-cao.jpg"
+      },
+      {
+        "id": 8,
+        "categoria": "brinquedo",
+        "nome": "Ratinho de Brinquedo para Gatos",
+        "descricao": "Ratinho com catnip para gatos.",
+        "preco": 19.90,
+        "imagem": "https://example.com/images/ratinho-gato.jpg"
+      },
+      {
+        "id": 9,
+        "categoria": "objeto",
+        "nome": "Cama para Cães Pequenos",
+        "descricao": "Cama confortável e lavável para cães pequenos.",
+        "preco": 129.90,
+        "imagem": "https://example.com/images/cama-cao-pequeno.jpg"
+      },
+      {
+        "id": 10,
+        "categoria": "objeto",
+        "nome": "Arranhador para Gatos",
+        "descricao": "Arranhador compacto para proteger seus móveis.",
+        "preco": 99.90,
+        "imagem": "https://example.com/images/arranhador-gato.jpg"
+      },
+      {
+        "id": 11,
+        "categoria": "objeto",
+        "nome": "Coleira Ajustável para Cães",
+        "descricao": "Coleira confortável e ajustável.",
+        "preco": 39.90,
+        "imagem": "https://example.com/images/coleira-cao.jpg"
+      },
+      {
+        "id": 12,
+        "categoria": "objeto",
+        "nome": "Fonte de Água para Gatos",
+        "descricao": "Fonte automática para manter seu gato hidratado.",
+        "preco": 159.90,
+        "imagem": "https://example.com/images/fonte-agua-gato.jpg"
+      },
+      {
+        "id": 13,
+        "categoria": "ração",
+        "nome": "Ração Hipoalergênica para Cães",
+        "descricao": "Ração especial para cães com alergias alimentares.",
+        "preco": 99.90,
+        "imagem": "https://example.com/images/racao-hipoalergenica.jpg"
+      },
+      {
+        "id": 14,
+        "categoria": "ração",
+        "nome": "Ração Grain Free para Gatos",
+        "descricao": "Ração sem grãos para gatos sensíveis.",
+        "preco": 119.90,
+        "imagem": "https://example.com/images/racao-grainfree-gato.jpg"
+      },
+      {
+        "id": 15,
+        "categoria": "brinquedo",
+        "nome": "Disco de Borracha para Cães",
+        "descricao": "Disco ideal para brincadeiras ao ar livre.",
+        "preco": 34.90,
+        "imagem": "https://example.com/images/disco-borracha.jpg"
+      },
+      {
+        "id": 16,
+        "categoria": "objeto",
+        "nome": "Cama para Gatos Luxuosa",
+        "descricao": "Cama premium para o conforto do seu gato.",
+        "preco": 199.90,
+        "imagem": "https://example.com/images/cama-luxo-gato.jpg"
+      },
+      {
+        "id": 17,
+        "categoria": "brinquedo",
+        "nome": "Mordedor de Nylon para Cães",
+        "descricao": "Mordedor durável para cães que amam mastigar.",
+        "preco": 49.90,
+        "imagem": "https://example.com/images/mordedor-nylon.jpg"
+      },
+      {
+        "id": 18,
+        "categoria": "objeto",
+        "nome": "Coleira com Guia para Gatos",
+        "descricao": "Kit completo para passeios seguros.",
+        "preco": 59.90,
+        "imagem": "https://example.com/images/coleira-guia-gato.jpg"
+      },
+      {
+        "id": 19,
+        "categoria": "ração",
+        "nome": "Ração para Cães Sêniores",
+        "descricao": "Ração especial para cães mais velhos.",
+        "preco": 89.90,
+        "imagem": "https://example.com/images/racao-cao-senior.jpg"
+      },
+      {
+        "id": 20,
+        "categoria": "objeto",
+        "nome": "Bolsa de Transporte para Cães e Gatos",
+        "descricao": "Bolsa prática e confortável para transporte.",
+        "preco": 179.90,
+        "imagem": "https://example.com/images/bolsa-transporte.jpg"
+      }
+    ]
+  }
+  
