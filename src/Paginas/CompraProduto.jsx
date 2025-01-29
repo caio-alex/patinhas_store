@@ -1,8 +1,10 @@
+
 import styled from 'styled-components';
 import React from 'react';
-import { useState } from 'react';
-import CardProduto from '../Components/CardProduto/CardProduto';
-
+import { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import ProdutoLista from './ProdutoLista';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Filtro = styled.div`
     position: sticky; 
@@ -195,8 +197,32 @@ const FiltroDropdown = styled.div`
     }
 `;
 
+const CardsLista = styled.div`
+    @media (max-width:650px) {
+        justify-content: center;
+    }
+`;
 
-export function Compra() {
+const CompraProduto = () => {
+    const { categoria } = useParams(); // Captura a categoria da URL
+    const [produtos, setProdutos] = useState([]);
+
+    useEffect(() => {
+        const fetchProdutos = async () => {
+            const response = await fetch(
+                `https://raw.githubusercontent.com/caio-alex/produtosPet/refs/heads/main/produtos.json`
+            );
+            const data = await response.json();
+
+            // Filtrando os produtos pela categoria
+            const produtosFiltrados = data.filter((produto) => produto.categoria === categoria);
+            setProdutos(produtosFiltrados);
+        };
+
+        fetchProdutos();
+    }, [categoria]);
+
+    //  // // // // // // // //
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
     const toggleDropdown = () => {
@@ -216,7 +242,7 @@ export function Compra() {
                     </form>
                     <div class="input-group ">
                         <div class="input-group-prepend">
-                            <button class="btn btn-outline-secondary" type="button">F</button>
+                            <button class="btn btn-outline-secondary" type="button"><i class="fa-solid fa-filter"></i></button>
                         </div>
                         <select class="custom-select" id="inputGroupSelect03" aria-label="Exemplo de select com botão addon">
                             <option selected>Produto</option>
@@ -227,7 +253,7 @@ export function Compra() {
                     </div>
                     <div class="input-group ">
                         <div class="input-group-prepend">
-                            <button class="btn btn-outline-secondary" type="button">F</button>
+                            <button class="btn btn-outline-secondary" type="button"><i class="fa-solid fa-filter"></i></button>
                         </div>
                         <select class="custom-select" id="inputGroupSelect03" aria-label="Exemplo de select com botão addon">
                             <option selected>Marca</option>
@@ -239,47 +265,53 @@ export function Compra() {
                 </div>
             </Filtro>
             <DropdownButton onClick={toggleDropdown}>
-                {isDropdownOpen ? "Fechar" : "Filtro"}
+                {isDropdownOpen ? <i class="fa-solid fa-xmark"></i> : <i class="fa-solid fa-filter"></i>}
             </DropdownButton>
 
             {isDropdownOpen && (
                 <FiltroDropdown>
                     <div>
-                    <h3>Filtros</h3>
-                    <form>
-                        <div class="form-group">
-                            <label for="formControlRange">Preço(R$)</label>
-                            <input type="range" class="form-control-range" id="formControlRange"></input>
+                        <h3>Filtros</h3>
+                        <form>
+                            <div class="form-group">
+                                <label for="formControlRange">Preço(R$)</label>
+                                <input type="range" class="form-control-range" id="formControlRange"></input>
+                            </div>
+                        </form>
+                        <div class="input-group ">
+                            <div class="input-group-prepend">
+                                <button class="btn btn-outline-secondary" type="button"><i class="fa-solid fa-filter"></i></button>
+                            </div>
+                            <select class="custom-select" id="inputGroupSelect03" aria-label="Exemplo de select com botão addon">
+                                <option selected>Produto</option>
+                                <option value="1">Um</option>
+                                <option value="2">Dois</option>
+                                <option value="3">Três</option>
+                            </select>
                         </div>
-                    </form>
-                    <div class="input-group ">
-                        <div class="input-group-prepend">
-                            <button class="btn btn-outline-secondary" type="button">F</button>
+                        <div class="input-group ">
+                            <div class="input-group-prepend">
+                                <button class="btn btn-outline-secondary" type="button"><i class="fa-solid fa-filter"></i></button>
+                            </div>
+                            <select class="custom-select" id="inputGroupSelect03" aria-label="Exemplo de select com botão addon">
+                                <option selected>Marca</option>
+                                <option value="1">Um</option>
+                                <option value="2">Dois</option>
+                                <option value="3">Três</option>
+                            </select>
                         </div>
-                        <select class="custom-select" id="inputGroupSelect03" aria-label="Exemplo de select com botão addon">
-                            <option selected>Produto</option>
-                            <option value="1">Um</option>
-                            <option value="2">Dois</option>
-                            <option value="3">Três</option>
-                        </select>
                     </div>
-                    <div class="input-group ">
-                        <div class="input-group-prepend">
-                            <button class="btn btn-outline-secondary" type="button">F</button>
-                        </div>
-                        <select class="custom-select" id="inputGroupSelect03" aria-label="Exemplo de select com botão addon">
-                            <option selected>Marca</option>
-                            <option value="1">Um</option>
-                            <option value="2">Dois</option>
-                            <option value="3">Três</option>
-                        </select>
-                    </div>
-                </div>
                 </FiltroDropdown>
             )}
+            <CardsLista className='pai'>
             
-               <CardProduto/> 
+                <ProdutoLista produtos={produtos} />
             
+            </CardsLista>      
+
         </Container>
     );
 }
+
+
+export default CompraProduto;

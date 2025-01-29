@@ -1,0 +1,255 @@
+[
+  {
+    "id": 1,
+    "titulo": "Ração Seca Nutrilus Pro+ Frango & Carne",
+    "categoria": "cachorro",
+    "preco": 129.99,
+    "imagem": "https://www.petlove.com.br/images/products/267509/product/%2820%29_Ra%C3%A7%C3%A3o_Seca_Nutrilus_Pro__Frango___Carne_para_C%C3%A3es_Adultos_2.jpg"
+  },
+  {
+    "id": 2,
+    "titulo": "Ração Seca True para Cães Adultos Raças Pequenas",
+    "categoria": "cachorro",
+    "preco": 169.99,
+    "imagem": "https://www.petlove.com.br/images/products/237742/product/Ra%C3%A7%C3%A3o_Seca_True_para_C%C3%A3es_Adultos_Ra%C3%A7as_Pequenas_2638251.jpg"
+  },
+  {
+    "id": 3,
+    "titulo": "Ração Seca PremieR Pet Golden",
+    "categoria": "cachorro",
+    "preco": 100.0,
+    "imagem": "https://www.petlove.com.br/images/products/265990/small/Ra%C3%A7%C3%A3o_Seca_PremieR_Pet_Golden_Formula_C%C3%A3es_Adultos_Frango_e_Arroz_Mini_Bits_-_15_Kg_31021721-3_1.jpg"
+  },
+  {
+    "id": 4,
+    "titulo": "Tapete Higiênico Meau Cheirinho Cítrico Slim - 30 uni",
+    "categoria": "cachorro",
+    "preco": 68.0,
+    "imagem": "https://www.petlove.com.br/images/products/270770/small/_0009_2492322_Meau_Slim_C%C3%ADtrico_%282%29.jpg"
+  },
+  {
+    "id": 5,
+    "titulo": "Coleira Reserva Preta - Tam. Gn",
+    "categoria": "cachorro",
+    "preco": 50.0,
+    "imagem": "https://www.petlove.com.br/images/products/267156/small/_0005_31027520238__Coleira_Reserva_Preta_2.jpg"
+  },
+  {
+    "id": 6,
+    "titulo": "Tapete Higiênico Future Pet",
+    "categoria": "cachorro",
+    "preco": 90.0,
+    "imagem": "https://www.petlove.com.br/images/products/233622/small/Imagem6.png?1627749056.jpg"
+  },
+  {
+    "id": 7,
+    "titulo": "Antipulgas e Carrapatos NexGard 28,3 mg",
+    "categoria": "cachorro",
+    "preco": 100.0,
+    "imagem": "https://www.petlove.com.br/images/products/260163/small/Antipulgas_e_Carrapatos_NexGard_28_3_mg_para_C%C3%A3es_de_4_1_a_10_Kg_-_1_Tablete_3105746_%283%29.jpg"
+  },
+  {
+    "id": 8,
+    "titulo": "Vermífugo Biovet Vermivet Composto 600 mg - 4 compri",
+    "categoria": "cachorro",
+    "preco": 10.0,
+    "imagem": "https://www.petlove.com.br/images/products/265990/small/Ra%C3%A7%C3%A3o_Seca_PremieR_Pet_Golden_Formula_C%C3%A3es_Adultos_Frango_e_Arroz_Mini_Bits_-_15_Kg_31021721-3_1.jpg"
+  },
+  {
+    "id": 9,
+    "titulo": "Antipulgas Zoetis Simparic 20 mg",
+    "categoria": "cachorro",
+    "preco": 200.0,
+    "imagem": "https://www.petlove.com.br/images/products/191340/small/3110173-1.jpg"
+  },
+  {
+    "id": 10,
+    "titulo": "Antipulgas Zoetis Simparic 20 mg",
+    "categoria": "gato",
+    "preco": 200.0,
+    "imagem": "https://www.petlove.com.br/images/products/191340/small/3110173-1.jpg"
+  },
+  {
+    "id": 11,
+    "titulo": "Antipulgas Zoetis Simparic 20 mg",
+    "categoria": "gato",
+    "preco": 200.0,
+    "imagem": "https://www.petlove.com.br/images/products/191340/small/3110173-1.jpg"
+  },
+  {
+    "id": 12,
+    "titulo": "Antipulgas Zoetis Simparic 20 mg",
+    "categoria": "gato",
+    "preco": 200.0,
+    "imagem": "https://www.petlove.com.br/images/products/191340/small/3110173-1.jpg"
+  },
+  {
+    "id": 13,
+    "titulo": "Antipulgas Zoetis Simparic 20 mg",
+    "categoria": "gato",
+    "preco": 200.0,
+    "imagem": "https://www.petlove.com.br/images/products/191340/small/3110173-1.jpg"
+  },
+  {
+    "id": 14,
+    "titulo": "Antipulgas Zoetis Simparic 20 mg",
+    "categoria": "gato",
+    "preco": 200.0,
+    "imagem": "https://www.petlove.com.br/images/products/191340/small/3110173-1.jpg"
+  },
+  {
+    "id": 15,
+    "titulo": "Antipulgas Zoetis Simparic 20 mg",
+    "categoria": "gato",
+    "preco": 200.0,
+    "imagem": "https://www.petlove.com.br/images/products/191340/small/3110173-1.jpg"
+  },
+  {
+    "id": 16,
+    "titulo": "Antipulgas Zoetis Simparic 20 mg",
+    "categoria": "gato",
+    "preco": 200.0,
+    "imagem": "https://www.petlove.com.br/images/products/191340/small/3110173-1.jpg"
+  },
+  {
+    "id": 17,
+    "titulo": "Antipulgas Zoetis Simparic 20 mg",
+    "categoria": "gato",
+    "preco": 200.0,
+    "imagem": "https://www.petlove.com.br/images/products/191340/small/3110173-1.jpg"
+  },
+  {
+    "id": 18,
+    "titulo": "Antipulgas Zoetis Simparic 20 mg",
+    "categoria": "gato",
+    "preco": 200.0,
+    "imagem": "https://www.petlove.com.br/images/products/191340/small/3110173-1.jpg"
+  },
+  {
+    "id": 19,
+    "titulo": "Antipulgas Zoetis Simparic 20 mg",
+    "categoria": "aves",
+    "preco": 200.0,
+    "imagem": "https://www.petlove.com.br/images/products/191340/small/3110173-1.jpg"
+  },
+  {
+    "id": 20,
+    "titulo": "Antipulgas Zoetis Simparic 20 mg",
+    "categoria": "aves",
+    "preco": 200.0,
+    "imagem": "https://www.petlove.com.br/images/products/191340/small/3110173-1.jpg"
+  },
+  {
+    "id": 21,
+    "titulo": "Antipulgas Zoetis Simparic 20 mg",
+    "categoria": "aves",
+    "preco": 200.0,
+    "imagem": "https://www.petlove.com.br/images/products/191340/small/3110173-1.jpg"
+  },
+  {
+    "id": 22,
+    "titulo": "Antipulgas Zoetis Simparic 20 mg",
+    "categoria": "aves",
+    "preco": 200.0,
+    "imagem": "https://www.petlove.com.br/images/products/191340/small/3110173-1.jpg"
+  },
+  {
+    "id": 23,
+    "titulo": "Antipulgas Zoetis Simparic 20 mg",
+    "categoria": "aves",
+    "preco": 200.0,
+    "imagem": "https://www.petlove.com.br/images/products/191340/small/3110173-1.jpg"
+  },
+  {
+    "id": 24,
+    "titulo": "Antipulgas Zoetis Simparic 20 mg",
+    "categoria": "aves",
+    "preco": 200.0,
+    "imagem": "https://www.petlove.com.br/images/products/191340/small/3110173-1.jpg"
+  },
+  {
+    "id": 25,
+    "titulo": "Antipulgas Zoetis Simparic 20 mg",
+    "categoria": "peixe",
+    "preco": 200.0,
+    "imagem": "https://www.petlove.com.br/images/products/191340/small/3110173-1.jpg"
+  },
+  {
+    "id": 26,
+    "titulo": "Antipulgas Zoetis Simparic 20 mg",
+    "categoria": "peixe",
+    "preco": 200.0,
+    "imagem": "https://www.petlove.com.br/images/products/191340/small/3110173-1.jpg"
+  },
+  {
+    "id": 27,
+    "titulo": "Antipulgas Zoetis Simparic 20 mg",
+    "categoria": "peixe",
+    "preco": 200.0,
+    "imagem": "https://www.petlove.com.br/images/products/191340/small/3110173-1.jpg"
+  },
+  {
+    "id": 28,
+    "titulo": "Antipulgas Zoetis Simparic 20 mg",
+    "categoria": "peixe",
+    "preco": 200.0,
+    "imagem": "https://www.petlove.com.br/images/products/191340/small/3110173-1.jpg"
+  },
+  {
+    "id": 29,
+    "titulo": "Antipulgas Zoetis Simparic 20 mg",
+    "categoria": "peixe",
+    "preco": 200.0,
+    "imagem": "https://www.petlove.com.br/images/products/191340/small/3110173-1.jpg"
+  },
+  {
+    "id": 30,
+    "titulo": "Antipulgas Zoetis Simparic 20 mg",
+    "categoria": "peixe",
+    "preco": 200.0,
+    "imagem": "https://www.petlove.com.br/images/products/191340/small/3110173-1.jpg"
+  },
+  {
+    "id": 31,
+    "titulo": "Antipulgas Zoetis Simparic 20 mg",
+    "categoria": "casajardim",
+    "preco": 200.0,
+    "imagem": "https://www.petlove.com.br/images/products/191340/small/3110173-1.jpg"
+  },
+  {
+    "id": 32,
+    "titulo": "Antipulgas Zoetis Simparic 20 mg",
+    "categoria": "casajardim",
+    "preco": 200.0,
+    "imagem": "https://www.petlove.com.br/images/products/191340/small/3110173-1.jpg"
+  },
+  {
+    "id": 33,
+    "titulo": "Antipulgas Zoetis Simparic 20 mg",
+    "categoria": "casajardim",
+    "preco": 200.0,
+    "imagem": "https://www.petlove.com.br/images/products/191340/small/3110173-1.jpg"
+  },
+  {
+    "id": 34,
+    "titulo": "Antipulgas Zoetis Simparic 20 mg",
+    "categoria": "casajardim",
+    "preco": 200.0,
+    "imagem": "https://www.petlove.com.br/images/products/191340/small/3110173-1.jpg"
+  },
+  {
+    "id": 35,
+    "titulo": "Antipulgas Zoetis Simparic 20 mg",
+    "categoria": "casajardim",
+    "preco": 200.0,
+    "imagem": "https://www.petlove.com.br/images/products/191340/small/3110173-1.jpg"
+  },
+  {
+    "id": 36,
+    "titulo": "Antipulgas Zoetis Simparic 20 mg",
+    "categoria": "casajardim",
+    "preco": 200.0,
+    "imagem": "https://www.petlove.com.br/images/products/191340/small/3110173-1.jpg"
+  }
+  
+]

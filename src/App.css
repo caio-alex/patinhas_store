@@ -1,3 +1,5 @@
+@import "@fortawesome/fontawesome-free/css/all.min.css";
+
 body {
     background-image: url('/src/Images/fundo_pag.png');
     background-size: cover;

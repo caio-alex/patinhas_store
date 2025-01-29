@@ -1,28 +1,33 @@
 import React from "react";
 import styled from "styled-components";
 
-const ListaProdutoContainer = styled.div`
-    display: flex;
-    justify-content: center;
-    width: 70vw;
-    margin: 10px;
-    gap: 12px;
-    flex-wrap: wrap;
-
-    @media (max-width: 650px) {
-        width: 100%;
-    }
-
-`;
-
 const Card = styled.div`
-  width: 10rem;
+  width: 12rem;
   box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.2);
   background-color: #fff;
   border-radius: 10px;
+  margin: 20px;
+  padding-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-between;
+  transition:  ease 0.6s;
 
+
+  &:hover{
+    cursor: pointer;
+    transform: scale(1.04);
+  }
+
+  @media (max-width:650px) {
+   
+    }
   .card-img-top {
     width: 100%;
+  }
+
+  .card-conteudo{
     height: auto;
   }
 
@@ -49,7 +54,6 @@ const Card = styled.div`
     color: #fff;
     background-color: #5158d9;
     text-decoration: none;
-    display: inline-block;
     padding: 8px 16px;
     border-radius: 4px;
     text-align: center;
@@ -62,90 +66,46 @@ const Card = styled.div`
   }
 `;
 
-const produtos = [
-    {
-        id: 1,
-        imagem: "https://images.petz.com.br/fotos/1701977578928_mini.jpg",
-        titulo: "Bifinho para Cães Sabor Churrasco",
-        preco: "R$5,99",
-    },
-    {
-        id: 2,
-        imagem: "https://images.petz.com.br/fotos/1701977578928_mini.jpg",
-        titulo: "Bifinho para Cães Sabor Frango",
-        preco: "R$6,49",
-    },
-    {
-        id: 3,
-        imagem: "https://images.petz.com.br/fotos/1701977578928_mini.jpg",
-        titulo: "Bifinho para Cães Sabor Carne",
-        preco: "R$6,99",
-    },
-    {
-        id: 4,
-        imagem: "https://images.petz.com.br/fotos/1701977578928_mini.jpg",
-        titulo: "Bifinho para Cães Sabor Carne",
-        preco: "R$6,99",
-    },
-    {
-        id: 5,
-        imagem: "https://images.petz.com.br/fotos/1701977578928_mini.jpg",
-        titulo: "Bifinho para Cães Sabor Carne",
-        preco: "R$6,99",
-    },
-    {
-        id: 6,
-        imagem: "https://images.petz.com.br/fotos/1701977578928_mini.jpg",
-        titulo: "Bifinho para Cães Sabor Carne",
-        preco: "R$6,99",
-    },
-    {
-        id: 7,
-        imagem: "https://images.petz.com.br/fotos/1701977578928_mini.jpg",
-        titulo: "Bifinho para Cães Sabor Carne",
-        preco: "R$6,99",
-    }
-];
+const CardProduto = ({ produtos }) => {
+  
+  const AdicionarLocalStorage = (event) => {
+    event.preventDefault();
+    const produtosSalvos = JSON.parse(localStorage.getItem("produtos")) || [];
 
-const CardProduto = ({ imagem, titulo, preco }) => {
-    const AdicionarLocalStorage = () => {
-        const produtosSalvos = JSON.parse(localStorage.getItem('produtos')) || [];
-        const novoProduto = { imagem, titulo, preco };
-
-        produtosSalvos.push(novoProduto);
-
-        localStorage.setItem('produtos', JSON.stringify(produtosSalvos))
-
-        window.alert(`${titulo} adicionado ao carrinho`)
-    };
-    return (
-        <Card>
-            <img className="card-img-top" src={imagem} alt={titulo} />
-            <div className="card-body">
-                <h5 className="card-title">{titulo}</h5>
-            </div>
-            <p className="card-text">
-                <span>Á partir de</span> {preco}
-            </p>
-            <button onClick={AdicionarLocalStorage} className="btn">
-                Adicionar
-            </button>
-        </Card>
+    const produtoExistente = produtosSalvos.find(
+      (produto) => produto.id === produtos.id
     );
+
+    if (produtoExistente) {
+      produtoExistente.quantidade += 1;
+    } else {
+      produtosSalvos.push({ ...produtos, quantidade: 1 });
+    }
+
+    localStorage.setItem("produtos", JSON.stringify(produtosSalvos));
+
+    window.alert(`${produtos.titulo} adicionado ao carrinho`);
+    window.location.reload()
+  };
+
+  return (
+    <div className="col-12 col-sm-6 col-md-4 col-lg-3 d-flex justify-content-center">
+      <Card> 
+        <img className="card-img-top" src="https://images.petz.com.br/fotos/1695142896322.jpg" alt={produtos.titulo}/>
+        <div className="card-conteudo">
+        <div className="card-body">
+          <h5 className="card-title">{produtos.titulo}</h5>
+        </div>
+          <p className="card-text">
+            <span>Á partir de </span>R${produtos.preco}
+          </p>
+          <button onClick={AdicionarLocalStorage} className="btn">
+            Adicionar ao <i class="fa-solid fa-cart-shopping" ></i>
+          </button>
+          </div>
+      </Card>
+    </div>
+  );
 };
 
-export const ListaProduto = () => (
-    <ListaProdutoContainer>
-        {produtos.map((produto) => (
-            <CardProduto
-                key={produto.id}
-                imagem={produto.imagem}
-                titulo={produto.titulo}
-                preco={produto.preco}
-            />
-        ))}
-    </ListaProdutoContainer>
-);
-
-export default ListaProduto;
-
+export default CardProduto;

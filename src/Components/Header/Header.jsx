@@ -4,6 +4,7 @@ import imgHeader from '../../Images/header_pata.png';
 import styled from 'styled-components';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import ProdutoLista from '../../Paginas/ProdutoLista';
 
 const Navbar = styled.nav`
   position: sticky;
@@ -33,6 +34,8 @@ const Menu = styled.div`
     font-weight: bold;
     color: #fff;
     margin: 0;
+    border: none;
+    background: none;
 
     @media (max-width: 390px) {
     font-size: 1.1rem;
@@ -230,8 +233,7 @@ const InputPesquisa2 = styled.div`
 `;
 
 
-export function Header() {
-
+export function Header({toggleCarrinho}) {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const toggleDropdown = () => {
@@ -241,14 +243,14 @@ export function Header() {
   return (
     <Navbar>
       <Menu>
-        <p className="logo" >Patinhas Store</p>
+        <Link to={"/"}><button className="logo" >Patinhas Store</button></Link>
         <InputPesquisa>
           <input type="search" className="pesquisa" placeholder="Pesquisa" />
           <FontAwesomeIcon icon={faMagnifyingGlass} style={{ color: "#f5f5f5" }} className='lupa' />
         </InputPesquisa>
         <Icones>
-          <FontAwesomeIcon icon={faUser} style={{ color: "#f5f5f5" }} className='icone' />
-          <FontAwesomeIcon icon={faCartShopping} style={{ color: "#f5f5f5" }} className='icone' />
+          <Link to="/Usuario"><FontAwesomeIcon icon={faUser} style={{ color: "#f5f5f5" }} className='icone' /></Link>
+          <FontAwesomeIcon icon={faCartShopping} style={{ color: "#f5f5f5" }} className='icone' onClick={toggleCarrinho}/>
           <MenuIcon onClick={toggleDropdown}>
             <FontAwesomeIcon icon={faBars} style={{ color: '#fff' }} />
           </MenuIcon>
@@ -256,45 +258,47 @@ export function Header() {
       </Menu>
 
 
-      <Lista>
+      <Lista >
         <li className="listaMenu">
-          <Link to="/compras">Cachorro</Link>
+          <Link to="/compraProduto/cachorro">Cachorro</Link>
+
         </li>
         <li className="listaMenu">
-          <Link to="/compras">Gato</Link>
+          <Link to="/compraProduto/gato">Gato</Link>
         </li>
         <li className="listaMenu">
-          <Link to="/compras">Aves</Link>
+          <Link to="/compraProduto/aves">Aves</Link>
         </li>
         <li className="listaMenu">
-          <Link to="/compras">Peixes</Link>
+          <Link to="/compraProduto/peixe">Peixes</Link>
         </li>
         <li className="listaMenu">
-          <Link to="/compras">Casa & Jardim</Link>
+          <Link to="/compraProduto/casajardim">Casa & Jardim</Link>
         </li>
       </Lista>
+      
 
       {isDropdownOpen && (
         <Dropdown className={isDropdownOpen ? 'active' : ''}>
           <InputPesquisa2>
-            <input type='search' className="pesquisa" placeholder="Pesquisar" />
+            <input type="search" className="pesquisa" placeholder="Pesquisar" />
             <FontAwesomeIcon icon={faMagnifyingGlass} style={{ color: "#f5f5f5" }} className="lupa" />
           </InputPesquisa2>
           <ul>
             <li className="listaMenu">
-              <Link to="/compras">Cachorro</Link>
+              <Link to="/compraProduto/cachorro">Cachorro</Link>
             </li>
             <li className="listaMenu">
-              <Link to="/compras">Gato</Link>
+              <Link to="/compraProduto/gato">Gato</Link>
             </li>
             <li className="listaMenu">
-              <Link to="/compras">Aves</Link>
+              <Link to="/compraProduto/aves">Aves</Link>
             </li>
             <li className="listaMenu">
-              <Link to="/compras">Peixes</Link>
+              <Link to="/compraProduto/peixe">Peixes</Link>
             </li>
             <li className="listaMenu">
-              <Link to="/compras">Casa & Jardim</Link>
+              <Link to="/compraProduto/casajardim">Casa & Jardim</Link>
             </li>
           </ul>
         </Dropdown>
