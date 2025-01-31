@@ -1,10 +1,10 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faCartShopping, faMagnifyingGlass, faBars } from '@fortawesome/free-solid-svg-icons';
 import imgHeader from '../../Images/header_pata.png';
+import imgLogo from '../../Images/Patinhas_logo.png'
 import styled from 'styled-components';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import ProdutoLista from '../../Paginas/ProdutoLista';
 
 const Navbar = styled.nav`
   position: sticky;
@@ -27,19 +27,28 @@ const Menu = styled.div`
   justify-content: space-between;
   width: 90%;
   flex-wrap: wrap; 
-  padding: 10px 0;
+ 
 
   .logo {
-    font-size: 1.5rem;
     font-weight: bold;
     color: #fff;
     margin: 0;
     border: none;
     background: none;
 
+    img{
+      width: 5rem;
+      height: 4rem;
+    }
+
     @media (max-width: 390px) {
     font-size: 1.1rem;
   }  
+  }
+
+  .drop_logo{
+    display: flex;
+    align-items: center;
   }
 
 `;
@@ -243,7 +252,12 @@ export function Header({toggleCarrinho}) {
   return (
     <Navbar>
       <Menu>
-        <Link to={"/"}><button className="logo" >Patinhas Store</button></Link>
+        <div className='drop_logo'>
+          <MenuIcon onClick={toggleDropdown}>
+            <FontAwesomeIcon icon={faBars} style={{ color: '#fff' }} />
+          </MenuIcon>
+        <Link to={"/"}><button className="logo" ><img src={imgLogo}></img></button></Link>
+        </div>
         <InputPesquisa>
           <input type="search" className="pesquisa" placeholder="Pesquisa" />
           <FontAwesomeIcon icon={faMagnifyingGlass} style={{ color: "#f5f5f5" }} className='lupa' />
@@ -251,9 +265,6 @@ export function Header({toggleCarrinho}) {
         <Icones>
           <Link to="/Usuario"><FontAwesomeIcon icon={faUser} style={{ color: "#f5f5f5" }} className='icone' /></Link>
           <FontAwesomeIcon icon={faCartShopping} style={{ color: "#f5f5f5" }} className='icone' onClick={toggleCarrinho}/>
-          <MenuIcon onClick={toggleDropdown}>
-            <FontAwesomeIcon icon={faBars} style={{ color: '#fff' }} />
-          </MenuIcon>
         </Icones>
       </Menu>
 

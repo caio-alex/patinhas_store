@@ -1,8 +1,10 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const Card = styled.div`
-  width: 12rem;
+  min-width: 12rem;
+  max-width: 14rem;
   box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.2);
   background-color: #fff;
   border-radius: 10px;
@@ -13,33 +15,43 @@ const Card = styled.div`
   flex-direction: column;
   justify-content: space-between;
   transition:  ease 0.6s;
+  text-decoration: none;
+  list-style: none;
 
+
+  .link{
+    text-decoration: none;
+    list-style: none;
+  }
 
   &:hover{
-    cursor: pointer;
+    
     transform: scale(1.04);
   }
+  
+  .card-img-top{
+    height: 220px;
+    
+    
+  }  
 
-  @media (max-width:650px) {
-   
-    }
-  .card-img-top {
-    width: 100%;
-  }
-
+  
   .card-conteudo{
     height: auto;
+    text-decoration: none;
+    list-style: none;
   }
 
   .card-title{
     padding: 10px;
     font-size: 0.9em;
+    
   }
-
+  
   .card-body {
     padding-bottom: 5px;
   }
-
+  
   .card-text {
     padding: 10px;
     padding-bottom: 0;
@@ -49,7 +61,7 @@ const Card = styled.div`
       font-weight: bold;
     }
   }
-
+  
   .btn {
     color: #fff;
     background-color: #5158d9;
@@ -86,12 +98,15 @@ const CardProduto = ({ produtos }) => {
 
     window.alert(`${produtos.titulo} adicionado ao carrinho`);
     window.location.reload()
+
   };
 
   return (
-    <div className="col-12 col-sm-6 col-md-4 col-lg-3 d-flex justify-content-center">
+    <div className="col-12 col-sm-6 col-md-4 col-lg-3 d-flex justify-content-center cards">
       <Card> 
-        <img className="card-img-top" src="https://images.petz.com.br/fotos/1695142896322.jpg" alt={produtos.titulo}/>
+      <Link to={`/Compra/${produtos.id}`} style={{ textDecoration: "none", color: "inherit" }}>
+        <img className="card-img-top" src={produtos.imagem} alt={produtos.titulo}/>
+      </Link>
         <div className="card-conteudo">
         <div className="card-body">
           <h5 className="card-title">{produtos.titulo}</h5>
@@ -99,11 +114,13 @@ const CardProduto = ({ produtos }) => {
           <p className="card-text">
             <span>Á partir de </span>R${produtos.preco}
           </p>
-          <button onClick={AdicionarLocalStorage} className="btn">
+          
+          <button onClick={AdicionarLocalStorage} className="btn" >
             Adicionar ao <i class="fa-solid fa-cart-shopping" ></i>
           </button>
           </div>
       </Card>
+      
     </div>
   );
 };

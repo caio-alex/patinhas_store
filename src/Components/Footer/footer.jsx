@@ -1,8 +1,20 @@
 import styled from "styled-components";
-
+import imgLogo from '../../Images/Patinhas_logo.png'
+import { Link } from "react-router-dom";
 
 const Footers = styled.div`
     background-color: #5158d9;
+    
+    
+    .logo_img{
+        width: 7rem;
+        height: 6rem;
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
     
 `;
 
@@ -139,16 +151,17 @@ const ListaInput = styled.div`
 export function Footer() {
     return (
         <Footers>
-            <h1>Patinhas store</h1>
+            <img src={imgLogo} className="logo_img"></img>
             <ItensFooter>
                 <Abas>
                     <ul className="topicos">
                         <h4 className="titulo">Páginas</h4>
-                        <li><a href="#">Cachorro</a></li>
-                        <li><a href="#">Gato</a></li>
-                        <li><a href="#">Aves</a></li>
-                        <li><a href="#">Peixes</a></li>
-                        <li><a href="#">Casa & Jardim</a></li>
+                        <Link to="/compraProduto/cachorro"><li><a href="#">Cachorro</a></li></Link>
+                        <Link to="/compraProduto/gato"><li><a href="#">Gato</a></li></Link>
+                        <Link to="/compraProduto/aves"><li><a href="#">Aves</a></li></Link>
+                        <Link to="/compraProduto/peixe"><li><a href="#">Peixes</a></li></Link>
+                        <Link to="/compraProduto/casajardim"><li><a href="#">Casa & Jardim</a></li></Link>
+                        
                     </ul>
                     <ul className="topicos">
                         <h4 className="titulo">Marcas</h4>

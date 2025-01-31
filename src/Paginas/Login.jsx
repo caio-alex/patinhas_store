@@ -36,7 +36,7 @@ const Dados = styled.div`
     }
 `;
 
-export default function Loguin() {
+export default function Login() {
     const AddDadosLocalStorage = (event) => {
         event.preventDefault();
 
@@ -54,8 +54,7 @@ export default function Loguin() {
     }
     return (
         <DadosPerfil>
-            <h1>Meus Dados</h1>
-            <p>Confira os seus dados de cadastro</p>
+            <h1>Atualize os Dados</h1>
             <Dados>
                 <form onSubmit={AddDadosLocalStorage}>
                     <div class="form-row1">

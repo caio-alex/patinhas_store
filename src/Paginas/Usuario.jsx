@@ -15,7 +15,7 @@ const Perfil = styled.div`
   }
 
   .info {
-    background-color: #ececec;
+    background-color: #ffffff;
     border-radius: 5px;
     padding: 10px;
     border: #6a6fd8 solid 2px;
@@ -143,7 +143,7 @@ export function Usuario() {
             </p>
           </div>
         </DadosPerfil>
-        <Link to={"/Loguin"}>
+        <Link to={"/Login"}>
           <button className="btnAtualizar">Atualizar Cadastro</button>
         </Link>
       </Perfil>

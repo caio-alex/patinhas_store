@@ -2,9 +2,9 @@
 import styled from 'styled-components';
 import React from 'react';
 import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import ProdutoLista from './ProdutoLista';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 
 const Filtro = styled.div`
     position: sticky; 
@@ -54,6 +54,7 @@ const Filtro = styled.div`
         display: flex;
         gap: 5px;
         margin: 10px;
+        width: 100%;
 
         .input-group-prepend {
             display: flex;
@@ -79,7 +80,7 @@ const Filtro = styled.div`
             padding: 5px;
             font-size: 1rem;
             color: #5158d9;
-            width: 70%;
+            width:90%;
 
         }
     }
@@ -89,6 +90,9 @@ const Filtro = styled.div`
 const Container = styled.div`
     display: flex;
     justify-content: space-around;
+    .row{
+        justify-content: space-around;
+    }
 `;
 
 const DropdownButton = styled.button`
@@ -191,20 +195,21 @@ const FiltroDropdown = styled.div`
             padding: 5px;
             font-size: 1rem;
             color: #5158d9;
-            width: 70%;
+            width: 90%;
 
         }
     }
 `;
 
 const CardsLista = styled.div`
+
     @media (max-width:650px) {
         justify-content: center;
     }
 `;
 
 const CompraProduto = () => {
-    const { categoria } = useParams(); // Captura a categoria da URL
+    const { categoria } = useParams();
     const [produtos, setProdutos] = useState([]);
 
     useEffect(() => {
@@ -214,7 +219,6 @@ const CompraProduto = () => {
             );
             const data = await response.json();
 
-            // Filtrando os produtos pela categoria
             const produtosFiltrados = data.filter((produto) => produto.categoria === categoria);
             setProdutos(produtosFiltrados);
         };
@@ -229,6 +233,19 @@ const CompraProduto = () => {
         setIsDropdownOpen(!isDropdownOpen);
     }
 
+    //   // // // // /// /// /////////
+
+    const [precoMax, setPrecoMax] = useState(500);
+    const [filtroCategoria, setFiltroCategoria] = useState("todos");
+    const [filtroTipo, setFiltroTipo] = useState("todos")
+
+    const produtosFiltrados = produtos.filter((produto) => {
+        const matchCategoria = filtroCategoria === "todos" || produto.categoria === filtroCategoria;
+        const matchPreco = precoMax === 0 || produto.preco <= precoMax;
+        const matchTipo = filtroTipo === "todos" || produto.tipo === filtroTipo
+        return matchCategoria && matchPreco && matchTipo;
+    });
+
     return (
         <Container>
             <Filtro>
@@ -236,32 +253,30 @@ const CompraProduto = () => {
                     <h3>Filtros</h3>
                     <form>
                         <div class="form-group">
-                            <label for="formControlRange">Preço(R$)</label>
-                            <input type="range" class="form-control-range" id="formControlRange"></input>
+                        <label htmlFor="formControlRange">
+                            Preço(até R$ {precoMax})
+                        </label>
+                            <input type="range" class="form-control-range" id="formControlRange"
+                                min="0"
+                                max="500"
+                                step="10"
+                                onChange={(e) => setPrecoMax(e.target.value)}></input>
                         </div>
                     </form>
-                    <div class="input-group ">
-                        <div class="input-group-prepend">
-                            <button class="btn btn-outline-secondary" type="button"><i class="fa-solid fa-filter"></i></button>
+                    <div className="input-group">
+                            
+                            <select
+                                className="custom-select"
+                                onChange={(e) => setFiltroTipo(e.target.value)}
+                                value={filtroTipo}
+                                aria-label="Selecione uma categoria"
+                            >
+                                <option value="todos">Todos os produtos</option>
+                                <option value="Alimento">Alimento</option>
+                                <option value="Ambiente">Ambiente</option>
+                                <option value="Higiene">Higiene</option>
+                            </select>
                         </div>
-                        <select class="custom-select" id="inputGroupSelect03" aria-label="Exemplo de select com botão addon">
-                            <option selected>Produto</option>
-                            <option value="1">Um</option>
-                            <option value="2">Dois</option>
-                            <option value="3">Três</option>
-                        </select>
-                    </div>
-                    <div class="input-group ">
-                        <div class="input-group-prepend">
-                            <button class="btn btn-outline-secondary" type="button"><i class="fa-solid fa-filter"></i></button>
-                        </div>
-                        <select class="custom-select" id="inputGroupSelect03" aria-label="Exemplo de select com botão addon">
-                            <option selected>Marca</option>
-                            <option value="1">Um</option>
-                            <option value="2">Dois</option>
-                            <option value="3">Três</option>
-                        </select>
-                    </div>
                 </div>
             </Filtro>
             <DropdownButton onClick={toggleDropdown}>
@@ -273,41 +288,43 @@ const CompraProduto = () => {
                     <div>
                         <h3>Filtros</h3>
                         <form>
-                            <div class="form-group">
-                                <label for="formControlRange">Preço(R$)</label>
-                                <input type="range" class="form-control-range" id="formControlRange"></input>
+                            <div className="form-group">
+                                <label htmlFor="formControlRange">
+                                    Preço(até R$ {precoMax}) {/* Mostra o valor atual */}
+                                </label>
+                                <input
+                                    type="range"
+                                    className="form-control-range"
+                                    id="formControlRange"
+                                    min="0"
+                                    max="500"
+                                    step="10"
+                                    value={precoMax} // Conectado ao estado
+                                    onChange={(e) => setPrecoMax(Number(e.target.value))} // Converte para número
+                                />
                             </div>
                         </form>
-                        <div class="input-group ">
-                            <div class="input-group-prepend">
-                                <button class="btn btn-outline-secondary" type="button"><i class="fa-solid fa-filter"></i></button>
-                            </div>
-                            <select class="custom-select" id="inputGroupSelect03" aria-label="Exemplo de select com botão addon">
-                                <option selected>Produto</option>
-                                <option value="1">Um</option>
-                                <option value="2">Dois</option>
-                                <option value="3">Três</option>
-                            </select>
-                        </div>
-                        <div class="input-group ">
-                            <div class="input-group-prepend">
-                                <button class="btn btn-outline-secondary" type="button"><i class="fa-solid fa-filter"></i></button>
-                            </div>
-                            <select class="custom-select" id="inputGroupSelect03" aria-label="Exemplo de select com botão addon">
-                                <option selected>Marca</option>
-                                <option value="1">Um</option>
-                                <option value="2">Dois</option>
-                                <option value="3">Três</option>
+                        <div className="input-group">
+                            <select
+                                className="custom-select"
+                                onChange={(e) => setFiltroTipo(e.target.value)}
+                                value={filtroTipo}
+                                aria-label="Selecione uma categoria"
+                            >
+                                <option value="todos">Todos os produtos</option>
+                                <option value="Alimento">Alimento</option>
+                                <option value="Ambiente">Ambiente</option>
+                                <option value="Higiene">Higiene</option>
                             </select>
                         </div>
                     </div>
                 </FiltroDropdown>
             )}
             <CardsLista className='pai'>
-            
-                <ProdutoLista produtos={produtos} />
-            
-            </CardsLista>      
+                
+                <ProdutoLista produtos={produtosFiltrados} />
+
+            </CardsLista>
 
         </Container>
     );

@@ -1,255 +1,274 @@
 [
   {
     "id": 1,
-    "titulo": "Ração Seca Nutrilus Pro+ Frango & Carne",
+    "titulo": "Ração Seca Hill",
     "categoria": "cachorro",
     "preco": 129.99,
-    "imagem": "https://www.petlove.com.br/images/products/267509/product/%2820%29_Ra%C3%A7%C3%A3o_Seca_Nutrilus_Pro__Frango___Carne_para_C%C3%A3es_Adultos_2.jpg"
+    "tipo": "Alimento",
+    "imagem": "https://images.petz.com.br/fotos/1713803501124_mini.jpg"
   },
   {
     "id": 2,
-    "titulo": "Ração Seca True para Cães Adultos Raças Pequenas",
-    "categoria": "cachorro",
-    "preco": 169.99,
-    "imagem": "https://www.petlove.com.br/images/products/237742/product/Ra%C3%A7%C3%A3o_Seca_True_para_C%C3%A3es_Adultos_Ra%C3%A7as_Pequenas_2638251.jpg"
+    "titulo": "Areia Higiênica Viva Verde",
+    "categoria": "gato",
+    "preco": 150.00,
+    "tipo":"Higiene",
+    "imagem": "https://images.petz.com.br/fotos/1707319108148.jpg"
   },
   {
     "id": 3,
-    "titulo": "Ração Seca PremieR Pet Golden",
-    "categoria": "cachorro",
-    "preco": 100.0,
-    "imagem": "https://www.petlove.com.br/images/products/265990/small/Ra%C3%A7%C3%A3o_Seca_PremieR_Pet_Golden_Formula_C%C3%A3es_Adultos_Frango_e_Arroz_Mini_Bits_-_15_Kg_31021721-3_1.jpg"
+    "titulo": "Aquário Boyu 20L",
+    "categoria": "peixe",
+    "preco": 500.00,
+    "tipo":"Ambiente",
+    "imagem": "https://images.petz.com.br/fotos/1652967145473_mini.jpg"
   },
   {
     "id": 4,
-    "titulo": "Tapete Higiênico Meau Cheirinho Cítrico Slim - 30 uni",
-    "categoria": "cachorro",
-    "preco": 68.0,
-    "imagem": "https://www.petlove.com.br/images/products/270770/small/_0009_2492322_Meau_Slim_C%C3%ADtrico_%282%29.jpg"
+    "titulo": "Ração Nutrópica Calopsita sabor Frutas",
+    "categoria": "aves",
+    "preco": 44.00,
+    "tipo":"Alimento",
+    "imagem": "https://images.petz.com.br/fotos/1552671515810_mini.jpg"
   },
   {
     "id": 5,
-    "titulo": "Coleira Reserva Preta - Tam. Gn",
+    "titulo": "Ração Seca Royal Cães Adultos Raças Pequenas",
     "categoria": "cachorro",
-    "preco": 50.0,
-    "imagem": "https://www.petlove.com.br/images/products/267156/small/_0005_31027520238__Coleira_Reserva_Preta_2.jpg"
+    "preco": 169.99,
+    "tipo":"Alimento",
+    "imagem": "https://images.petz.com.br/fotos/10001320000092_1733747109462_mini.jpg"
   },
   {
     "id": 6,
-    "titulo": "Tapete Higiênico Future Pet",
+    "titulo": "Ração Seca Premier Pet Golden",
     "categoria": "cachorro",
-    "preco": 90.0,
-    "imagem": "https://www.petlove.com.br/images/products/233622/small/Imagem6.png?1627749056.jpg"
+    "preco": 100.00,
+    "tipo":"Alimento",
+    "imagem": "https://images.petz.com.br/fotos/1656078239241_mini.jpg"
   },
   {
     "id": 7,
-    "titulo": "Antipulgas e Carrapatos NexGard 28,3 mg",
+    "titulo": "Tapete Higiênico Super Secão - 30 uni",
     "categoria": "cachorro",
-    "preco": 100.0,
-    "imagem": "https://www.petlove.com.br/images/products/260163/small/Antipulgas_e_Carrapatos_NexGard_28_3_mg_para_C%C3%A3es_de_4_1_a_10_Kg_-_1_Tablete_3105746_%283%29.jpg"
+    "preco": 68.00,
+    "tipo":"Higiene",
+    "imagem": "https://images.petz.com.br/fotos/1721844807565_mini.jpg"
   },
   {
     "id": 8,
-    "titulo": "Vermífugo Biovet Vermivet Composto 600 mg - 4 compri",
+    "titulo": "Coleira Reserva Preta - Tam. Gn",
     "categoria": "cachorro",
-    "preco": 10.0,
-    "imagem": "https://www.petlove.com.br/images/products/265990/small/Ra%C3%A7%C3%A3o_Seca_PremieR_Pet_Golden_Formula_C%C3%A3es_Adultos_Frango_e_Arroz_Mini_Bits_-_15_Kg_31021721-3_1.jpg"
+    "preco": 50.00,
+    "tipo":"Acessório",
+    "imagem": "https://images.petz.com.br/fotos/1633711861682_mini.jpg"
   },
   {
     "id": 9,
-    "titulo": "Antipulgas Zoetis Simparic 20 mg",
+    "titulo": "Tapete Higiênico Chalesco",
     "categoria": "cachorro",
-    "preco": 200.0,
-    "imagem": "https://www.petlove.com.br/images/products/191340/small/3110173-1.jpg"
+    "preco": 90.00,
+    "tipo":"Higiene",
+    "imagem": "https://images.petz.com.br/fotos/1594820441639_mini.jpg"
   },
   {
     "id": 10,
-    "titulo": "Antipulgas Zoetis Simparic 20 mg",
-    "categoria": "gato",
-    "preco": 200.0,
-    "imagem": "https://www.petlove.com.br/images/products/191340/small/3110173-1.jpg"
+    "titulo": "Antipulgas e Carrapatos NexGard 28,3 mg",
+    "categoria": "cachorro",
+    "preco": 100.00,
+    "tipo":"Higiene",
+    "imagem": "https://images.petz.com.br/fotos/1603125957209_mini.jpg"
   },
   {
     "id": 11,
-    "titulo": "Antipulgas Zoetis Simparic 20 mg",
-    "categoria": "gato",
-    "preco": 200.0,
-    "imagem": "https://www.petlove.com.br/images/products/191340/small/3110173-1.jpg"
+    "titulo": "Vermífugo Biovet Vermivet Composto 600 mg - 4 compri",
+    "categoria": "cachorro",
+    "preco": 10.00,
+    "tipo":"Higiene",
+    "imagem": "https://images.petz.com.br/fotos/1649170707881_mini.jpg"
   },
   {
     "id": 12,
     "titulo": "Antipulgas Zoetis Simparic 20 mg",
-    "categoria": "gato",
-    "preco": 200.0,
-    "imagem": "https://www.petlove.com.br/images/products/191340/small/3110173-1.jpg"
+    "categoria": "cachorro",
+    "preco": 200.00,
+    "tipo":"Higiene",
+    "imagem": "https://images.petz.com.br/fotos/1502309222713_mini.jpg"
   },
   {
     "id": 13,
-    "titulo": "Antipulgas Zoetis Simparic 20 mg",
+    "titulo": "Areia Higiênica Pipicat",
     "categoria": "gato",
-    "preco": 200.0,
-    "imagem": "https://www.petlove.com.br/images/products/191340/small/3110173-1.jpg"
+    "preco": 50.00,
+    "tipo":"Ambiente",
+    "imagem": "https://images.petz.com.br/fotos/1712674048603_mini.jpg"
   },
   {
     "id": 14,
-    "titulo": "Antipulgas Zoetis Simparic 20 mg",
+    "titulo": "Ração Úmida GranPlus",
     "categoria": "gato",
-    "preco": 200.0,
-    "imagem": "https://www.petlove.com.br/images/products/191340/small/3110173-1.jpg"
+    "preco": 50.00,
+    "tipo":"Alimento",
+    "imagem": "https://images.petz.com.br/fotos/1673984193226_mini.jpg"
   },
   {
     "id": 15,
-    "titulo": "Antipulgas Zoetis Simparic 20 mg",
+    "titulo": "Ração Úmida Royal",
     "categoria": "gato",
-    "preco": 200.0,
-    "imagem": "https://www.petlove.com.br/images/products/191340/small/3110173-1.jpg"
+    "preco": 40.00,
+    "tipo":"Alimento",
+    "imagem": "https://images.petz.com.br/fotos/1711656143873_mini.jpg"
   },
   {
     "id": 16,
-    "titulo": "Antipulgas Zoetis Simparic 20 mg",
+    "titulo": "Granulado Higienico Kat Bom",
     "categoria": "gato",
-    "preco": 200.0,
-    "imagem": "https://www.petlove.com.br/images/products/191340/small/3110173-1.jpg"
+    "preco": 80.00,
+    "tipo":"Higiene",
+    "imagem": "https://images.petz.com.br/fotos/1666703713768_mini.jpg"
   },
   {
     "id": 17,
-    "titulo": "Antipulgas Zoetis Simparic 20 mg",
+    "titulo": "Ração Goldem para Gatos",
     "categoria": "gato",
-    "preco": 200.0,
-    "imagem": "https://www.petlove.com.br/images/products/191340/small/3110173-1.jpg"
+    "preco": 140.00,
+    "tipo":"Alimento",
+    "imagem": "https://images.petz.com.br/fotos/1658415086408_mini.jpg"
   },
   {
     "id": 18,
-    "titulo": "Antipulgas Zoetis Simparic 20 mg",
-    "categoria": "gato",
-    "preco": 200.0,
-    "imagem": "https://www.petlove.com.br/images/products/191340/small/3110173-1.jpg"
+    "titulo": "Ração Zootenkna",
+    "categoria": "aves",
+    "preco": 10.00,
+    "tipo":"Alimento",
+    "imagem": "https://images.petz.com.br/fotos/1615571103677_mini.jpg"
   },
   {
     "id": 19,
-    "titulo": "Antipulgas Zoetis Simparic 20 mg",
+    "titulo": "Ração Reino das Aves Calopsita",
     "categoria": "aves",
-    "preco": 200.0,
-    "imagem": "https://www.petlove.com.br/images/products/191340/small/3110173-1.jpg"
+    "preco": 20.00,
+    "tipo":"Alimento",
+    "imagem": "https://images.petz.com.br/fotos/40013030000812_1730811259880_mini.jpg"
   },
   {
     "id": 20,
-    "titulo": "Antipulgas Zoetis Simparic 20 mg",
+    "titulo": "Ração Reino das Aves Beija-flor",
     "categoria": "aves",
-    "preco": 200.0,
-    "imagem": "https://www.petlove.com.br/images/products/191340/small/3110173-1.jpg"
+    "preco": 200.00,
+    "tipo":"Alimento",
+    "imagem": "https://images.petz.com.br/fotos/40013030000776_1730810189220_mini.jpg"
   },
   {
     "id": 21,
-    "titulo": "Antipulgas Zoetis Simparic 20 mg",
+    "titulo": "Ração Sempre Vita Periquitos",
     "categoria": "aves",
-    "preco": 200.0,
-    "imagem": "https://www.petlove.com.br/images/products/191340/small/3110173-1.jpg"
+    "preco": 20.00,
+    "tipo":"Alimento",
+    "imagem": "https://images.petz.com.br/fotos/40013030000165-1_mini.jpg"
   },
   {
     "id": 22,
-    "titulo": "Antipulgas Zoetis Simparic 20 mg",
+    "titulo": "Alimento Nutrópica",
     "categoria": "aves",
-    "preco": 200.0,
-    "imagem": "https://www.petlove.com.br/images/products/191340/small/3110173-1.jpg"
+    "preco": 90.00,
+    "tipo":"Alimento",
+    "imagem": "https://images.petz.com.br/fotos/1560353560256_mini.jpg"
   },
   {
     "id": 23,
-    "titulo": "Antipulgas Zoetis Simparic 20 mg",
+    "titulo": "Ração Reino das Aves Papagaio",
     "categoria": "aves",
-    "preco": 200.0,
-    "imagem": "https://www.petlove.com.br/images/products/191340/small/3110173-1.jpg"
+    "preco": 10.00,
+    "tipo":"Alimento",
+    "imagem": "https://images.petz.com.br/fotos/40013030000822_1730814356670_mini.jpg"
   },
   {
     "id": 24,
-    "titulo": "Antipulgas Zoetis Simparic 20 mg",
-    "categoria": "aves",
-    "preco": 200.0,
-    "imagem": "https://www.petlove.com.br/images/products/191340/small/3110173-1.jpg"
+    "titulo": "Alimento para peixe Tetra",
+    "categoria": "peixe",
+    "preco": 50.00,
+    "tipo":"Alimento",
+    "imagem": "https://images.petz.com.br/fotos/1458598178395_mini.jpg"
   },
   {
     "id": 25,
-    "titulo": "Antipulgas Zoetis Simparic 20 mg",
+    "titulo": "Medicação Labcon Peixes Bacter",
     "categoria": "peixe",
-    "preco": 200.0,
-    "imagem": "https://www.petlove.com.br/images/products/191340/small/3110173-1.jpg"
+    "preco": 39.00,
+    "tipo":"Higiene",
+    "imagem": "https://images.petz.com.br/fotos/1454964376656_mini.jpg"
   },
   {
     "id": 26,
-    "titulo": "Antipulgas Zoetis Simparic 20 mg",
+    "titulo": "Teste Labcon Ph",
     "categoria": "peixe",
-    "preco": 200.0,
-    "imagem": "https://www.petlove.com.br/images/products/191340/small/3110173-1.jpg"
+    "preco": 19.00,
+    "tipo":"Ambiente",
+    "imagem": "https://images.petz.com.br/fotos/1454964455634_mini.jpg"
   },
   {
     "id": 27,
-    "titulo": "Antipulgas Zoetis Simparic 20 mg",
+    "titulo": "Ração Nutribetta",
     "categoria": "peixe",
-    "preco": 200.0,
-    "imagem": "https://www.petlove.com.br/images/products/191340/small/3110173-1.jpg"
+    "preco": 20.00,
+    "tipo":"Alimento",
+    "imagem": "https://images.petz.com.br/fotos/1635968782073_mini.jpg"
   },
   {
     "id": 28,
-    "titulo": "Antipulgas Zoetis Simparic 20 mg",
+    "titulo": "Alimento Poyata para peixe Betta",
     "categoria": "peixe",
-    "preco": 200.0,
-    "imagem": "https://www.petlove.com.br/images/products/191340/small/3110173-1.jpg"
+    "preco": 13.00,
+    "tipo":"Alimento",
+    "imagem": "https://images.petz.com.br/fotos/1671038853959_mini.jpg"
   },
   {
     "id": 29,
-    "titulo": "Antipulgas Zoetis Simparic 20 mg",
-    "categoria": "peixe",
-    "preco": 200.0,
-    "imagem": "https://www.petlove.com.br/images/products/191340/small/3110173-1.jpg"
+    "titulo": "Adubo All Garden Hummus Minhoca 2kg",
+    "categoria": "casajardim",
+    "preco": 8.00,
+    "tipo":"Ambiente",
+    "imagem": "https://images.petz.com.br/fotos/1706621132827_mini.jpg"
   },
   {
     "id": 30,
-    "titulo": "Antipulgas Zoetis Simparic 20 mg",
-    "categoria": "peixe",
-    "preco": 200.0,
-    "imagem": "https://www.petlove.com.br/images/products/191340/small/3110173-1.jpg"
+    "titulo": "Subtrato Biomix Flores",
+    "categoria": "casajardim",
+    "preco": 35.00,
+    "tipo":"Ambiente",
+    "imagem": "https://images.petz.com.br/fotos/1459545421858_mini.jpg"
   },
   {
     "id": 31,
-    "titulo": "Antipulgas Zoetis Simparic 20 mg",
+    "titulo": "Kit Odorizante Glade",
     "categoria": "casajardim",
-    "preco": 200.0,
-    "imagem": "https://www.petlove.com.br/images/products/191340/small/3110173-1.jpg"
+    "preco": 60.00,
+    "tipo":"Higiene",
+    "imagem": "https://images.petz.com.br/fotos/1723750889792_mini.jpg"
   },
   {
     "id": 32,
-    "titulo": "Antipulgas Zoetis Simparic 20 mg",
+    "titulo": "Inseticida K-Othrine para Baratas 10g",
     "categoria": "casajardim",
-    "preco": 200.0,
-    "imagem": "https://www.petlove.com.br/images/products/191340/small/3110173-1.jpg"
+    "preco": 24.00,
+    "tipo":"Higiene",
+    "imagem": "https://images.petz.com.br/fotos/60026460000015_1731936487998_mini.jpg"
   },
   {
     "id": 33,
-    "titulo": "Antipulgas Zoetis Simparic 20 mg",
+    "titulo": "Terra Vegetal",
     "categoria": "casajardim",
-    "preco": 200.0,
-    "imagem": "https://www.petlove.com.br/images/products/191340/small/3110173-1.jpg"
+    "preco": 30.00,
+    "tipo":"Ambiente",
+    "imagem": "https://images.petz.com.br/fotos/1721745171467_mini.jpg"
   },
   {
     "id": 34,
-    "titulo": "Antipulgas Zoetis Simparic 20 mg",
+    "titulo": "Terra Vegetal Biomix" ,
     "categoria": "casajardim",
-    "preco": 200.0,
-    "imagem": "https://www.petlove.com.br/images/products/191340/small/3110173-1.jpg"
-  },
-  {
-    "id": 35,
-    "titulo": "Antipulgas Zoetis Simparic 20 mg",
-    "categoria": "casajardim",
-    "preco": 200.0,
-    "imagem": "https://www.petlove.com.br/images/products/191340/small/3110173-1.jpg"
-  },
-  {
-    "id": 36,
-    "titulo": "Antipulgas Zoetis Simparic 20 mg",
-    "categoria": "casajardim",
-    "preco": 200.0,
-    "imagem": "https://www.petlove.com.br/images/products/191340/small/3110173-1.jpg"
+    "preco": 11.00,
+    "tipo":"Ambiente",
+    "imagem": "https://images.petz.com.br/fotos/1613393163220_mini.jpg"
   }
-  
 ]
