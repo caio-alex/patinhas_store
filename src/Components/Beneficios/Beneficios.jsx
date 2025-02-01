@@ -35,7 +35,13 @@ const Promocao = styled.div`
         color: #FFF;
         max-width: 40vw;
         margin: 10px;
+        transition: transform ease .5s;
     }
+
+    .esquerda:hover{
+        transform: rotate(6deg);
+    }
+
     .direita{
         background-color: #e6b553;
         border-radius: 20px;
@@ -43,6 +49,11 @@ const Promocao = styled.div`
         color: #FFF;
         max-width: 40vw;
         margin: 10px;
+        transition: transform ease .5s;
+    }
+
+    .direita:hover{
+        transform: rotate(-6deg);
     }
     
     @media (max-width: 640px) {

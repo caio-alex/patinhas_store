@@ -18,7 +18,6 @@ const Card = styled.div`
   text-decoration: none;
   list-style: none;
 
-
   .link{
     text-decoration: none;
     list-style: none;

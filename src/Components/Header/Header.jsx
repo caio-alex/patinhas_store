@@ -262,10 +262,10 @@ export function Header({toggleCarrinho}) {
           </MenuIcon>
         <Link to={"/"}><button className="logo" ><img src={imgLogo}></img></button></Link>
         </div>
-        <InputPesquisa>
+        {/* <InputPesquisa>
           <input type="search" className="pesquisa" placeholder="Pesquisa"/>
           <FontAwesomeIcon icon={faMagnifyingGlass} style={{ color: "#f5f5f5" }} className='lupa' />
-        </InputPesquisa>
+        </InputPesquisa> */}
         <Icones>
           <Link to="/Usuario"><FontAwesomeIcon icon={faUser} style={{ color: "#f5f5f5" }} className='icone' /></Link>
           <FontAwesomeIcon icon={faCartShopping} style={{ color: "#f5f5f5" }} className='icone' onClick={toggleCarrinho}/>
@@ -295,10 +295,10 @@ export function Header({toggleCarrinho}) {
 
       {isDropdownOpen && (
         <Dropdown className={isDropdownOpen ? 'active' : ''}>
-          <InputPesquisa2>
+          {/* <InputPesquisa2>
             <input type="search" className="pesquisa" placeholder="Pesquisar" />
             <FontAwesomeIcon icon={faMagnifyingGlass} style={{ color: "#f5f5f5" }} className="lupa" />
-          </InputPesquisa2>
+          </InputPesquisa2> */}
           <ul>
             <li className="listaMenu">
               <Link to="/compraProduto/cachorro">Cachorro</Link>

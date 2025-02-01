@@ -90,8 +90,10 @@ const Filtro = styled.div`
 const Container = styled.div`
     display: flex;
     justify-content: space-around;
+    
     .row{
         justify-content: space-around;
+        gap: 5px;
     }
 `;
 
@@ -99,11 +101,13 @@ const DropdownButton = styled.button`
   position: absolute;
   top: 10rem;
   left: 10px;
-  height: 10vh;
+  height: 8vh;
+  width: 8vw;
+
   background-color: #6a6fd8;
   color: #fff;
   border: none;
-  border-radius: 10%;
+  border-radius: 50px;
   font-size: 1rem;
   z-index: 3;
   cursor: pointer;
@@ -203,6 +207,7 @@ const FiltroDropdown = styled.div`
 
 const CardsLista = styled.div`
     width: 70vw;
+    
     @media (max-width:650px) {
         justify-content: center;
     }
