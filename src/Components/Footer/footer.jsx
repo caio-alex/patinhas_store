@@ -163,14 +163,7 @@ export function Footer() {
                         <Link to="/compraProduto/casajardim"><li><a href="#">Casa & Jardim</a></li></Link>
                         
                     </ul>
-                    <ul className="topicos">
-                        <h4 className="titulo">Marcas</h4>
-                        <li><a href="#">Cachorro</a></li>
-                        <li><a href="#">Gato</a></li>
-                        <li><a href="#">Aves</a></li>
-                        <li><a href="#">Peixes</a></li>
-                        <li><a href="#">Casa & Jardim</a></li>
-                    </ul>
+                    
                     <ul className="topicos">
                         <h4 className="titulo">Nossas Redes</h4>
                         <li><a href="#">Instagram</a></li>

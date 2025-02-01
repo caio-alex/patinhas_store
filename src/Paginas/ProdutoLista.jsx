@@ -1,8 +1,16 @@
 import CardProduto from '../Components/CardProduto/CardProduto';
+import styled from "styled-components"
+
+const Info = styled.div`
+  text-align: center;
+  font-weight: bold;
+  align-items: center;
+
+`
 
 const ProdutoLista = ({ produtos }) => {
   if (!Array.isArray(produtos) || produtos.length === 0) {
-    return <p>Nenhum produto encontrado.</p>;
+    return <Info>Nenhum produto encontrado.</Info>;
   }
   return (
     <div className="container">

@@ -5,15 +5,18 @@ import img3 from "../../Images/img3.jpg"
 
 const Baner = styled.div`
   .carousel-item {
-    max-height: 75vh; /* Altura máxima do item */
+    max-height: 60vh;
+
     img {
-      object-fit: contain; /* Não corta a imagem no desktop */
+      height: 50vh;
+      width: 100%; 
+      object-fit: cover;
     }
 
     @media (max-width: 768px) {
       img {
-        min-height: 50vh; /* Altura mínima para telas médias */
-        object-fit: cover; /* Preenche o espaço sem bordas em telas menores */
+        height: 30vh
+
       }
     }
   }

@@ -1,8 +1,28 @@
 @import "@fortawesome/fontawesome-free/css/all.min.css";
 
+
 body {
     background-image: url('/src/Images/fundo_pag.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    font-family: "Poppins", serif;
+
+    
 }
+
+::-webkit-scrollbar {
+    width: 7px; 
+    height: 12px; 
+    background-color: #fff;
+  }
+
+
+  ::-webkit-scrollbar-thumb {
+    background: #3d42a1; /* Cor do polegar */
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #171a50; /* Cor ao passar o mouse */
+  }
+  

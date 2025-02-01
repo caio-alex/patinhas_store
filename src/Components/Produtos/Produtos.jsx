@@ -13,6 +13,8 @@ const Destaques = styled.div`
 const TituloProdutos = styled.div`
   text-align: center;
   padding: 10px;
+  color: #6a6fd8;
+  font-weight: bold;
 `;
 
 export function Produtos() {

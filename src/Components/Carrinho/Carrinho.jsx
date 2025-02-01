@@ -67,6 +67,7 @@ const Aside = styled.div`
         .botoes{
             flex-wrap: nowrap;
             display: flex;
+            gap: 5px;
         }
     }
 

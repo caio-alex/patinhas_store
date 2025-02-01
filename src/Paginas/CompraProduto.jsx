@@ -202,7 +202,7 @@ const FiltroDropdown = styled.div`
 `;
 
 const CardsLista = styled.div`
-
+    width: 70vw;
     @media (max-width:650px) {
         justify-content: center;
     }
@@ -290,7 +290,7 @@ const CompraProduto = () => {
                         <form>
                             <div className="form-group">
                                 <label htmlFor="formControlRange">
-                                    Preço(até R$ {precoMax}) {/* Mostra o valor atual */}
+                                    Preço(até R$ {precoMax})
                                 </label>
                                 <input
                                     type="range"
@@ -299,8 +299,8 @@ const CompraProduto = () => {
                                     min="0"
                                     max="500"
                                     step="10"
-                                    value={precoMax} // Conectado ao estado
-                                    onChange={(e) => setPrecoMax(Number(e.target.value))} // Converte para número
+                                    value={precoMax}
+                                    onChange={(e) => setPrecoMax(Number(e.target.value))} 
                                 />
                             </div>
                         </form>

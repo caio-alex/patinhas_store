@@ -3,8 +3,10 @@ import { faUser, faCartShopping, faMagnifyingGlass, faBars } from '@fortawesome/
 import imgHeader from '../../Images/header_pata.png';
 import imgLogo from '../../Images/Patinhas_logo.png'
 import styled from 'styled-components';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+
 
 const Navbar = styled.nav`
   position: sticky;
@@ -244,11 +246,44 @@ const InputPesquisa2 = styled.div`
 
 export function Header({toggleCarrinho}) {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [termoPesquisa, setTermoPesquisa] = useState("");
+  const [produtos, setProdutos] = useState([]);
+  const [produtosFiltrados, setProdutosFiltrados] = useState([]);
+  const navigate = useNavigate(); // Usado para redirecionar
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen)
   }
 
+  useEffect(() => {
+    fetch("https://raw.githubusercontent.com/caio-alex/produtosPet/refs/heads/main/produtos.json") // Substitua pelo seu endpoint da API
+      .then((response) => response.json())
+      .then((data) => {
+        setProdutos(data);
+      })
+      .catch((error) => {
+        console.error("Erro ao buscar produtos:", error);
+      });
+  }, []);
+
+  // Filtrar os produtos conforme o termo de pesquisa
+  useEffect(() => {
+    if (termoPesquisa === "") {
+      setProdutosFiltrados([]); // Limpa a lista de resultados se não houver pesquisa
+    } else {
+      setProdutosFiltrados(
+        produtos.filter((produtos) =>
+          produtos.nome.toLowerCase().includes(termoPesquisa.toLowerCase())
+        )
+      );
+    }
+  }, [termoPesquisa, produtos]);
+
+  const handlePesquisa = (produtos) => {
+    navigate(`/compraProduto/${produtos.id}`);
+  };
+
+  
   return (
     <Navbar>
       <Menu>
@@ -259,7 +294,8 @@ export function Header({toggleCarrinho}) {
         <Link to={"/"}><button className="logo" ><img src={imgLogo}></img></button></Link>
         </div>
         <InputPesquisa>
-          <input type="search" className="pesquisa" placeholder="Pesquisa" />
+          <input type="search" className="pesquisa" placeholder="Pesquisa" value={termoPesquisa}
+            onChange={(e) => setTermoPesquisa(e.target.value)}/>
           <FontAwesomeIcon icon={faMagnifyingGlass} style={{ color: "#f5f5f5" }} className='lupa' />
         </InputPesquisa>
         <Icones>
