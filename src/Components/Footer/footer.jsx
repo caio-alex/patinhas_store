@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 const Footers = styled.div`
     background-color: #5158d9;
     
-    
     .logo_img{
         width: 7rem;
         height: 6rem;
