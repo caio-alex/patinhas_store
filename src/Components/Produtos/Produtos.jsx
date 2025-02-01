@@ -41,7 +41,13 @@ export function Produtos() {
         <h2>Produtos que seu pet vai amar!</h2>
       </TituloProdutos>
       <Destaques>
-        {produto.slice(0, 6).map((produtos) => (
+        {produto.slice(0, 3).map((produtos) => (
+          <CardProduto key={produtos.id} produtos={produtos} />
+        ))}
+      </Destaques>
+      <TituloProdutos><h2>Em promoção!</h2></TituloProdutos>
+      <Destaques>
+        {produto.slice(4, 7).map((produtos) => (
           <CardProduto key={produtos.id} produtos={produtos} />
         ))}
       </Destaques>
