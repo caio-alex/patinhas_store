@@ -108,7 +108,7 @@ export function Carrinho({mostrar}) {
                 {produtos.length > 0 ? (
                     produtos.map((produto) => (
                         <li key={produto.id}>
-                            {/* imagem */}
+                            
                             <p><strong>{produto.titulo}</strong> - 
                             R${produto.preco} - ({produto.quantidade}x)</p>
                             <div className="botoes">
