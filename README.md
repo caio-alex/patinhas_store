@@ -6,6 +6,7 @@ Além disso, o projeto emprega Bootstrap para estilização básica e elementos 
 
 <h2>🚀 Funcionalidades</h2>
 <li>CRUD (Create, Read, Update, Delete): Manipulação dinâmica de dados.</li>
+<li>Utilizando fetch para pegar a API dos produtos- link do repositório da api: https://github.com/caio-alex/produtosPet</li>
 <li>Gerenciamento de estado com Hooks: Uso de useState, useEffect e outros hooks do React.</li>
 <li>Navegação SPA com React Router: Múltiplas páginas e rotas dinâmicas.</li>
 <li>Animações suaves: Utilização de styled-components e animações com keyframes.</li>
