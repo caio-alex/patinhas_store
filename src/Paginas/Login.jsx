@@ -121,7 +121,7 @@ export default function Login() {
                                 className="form-control"
                                 id="endereco"
                                 name="endereco"
-                                placeholder="Rua dos Bobos, nº 0"
+                                placeholder="Rua, nº 0"
                             />
                             <label htmlFor="cpf">CPF</label>
                             <input
