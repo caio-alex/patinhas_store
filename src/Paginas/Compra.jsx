@@ -74,10 +74,14 @@ const Produto = styled.div`
     
     .preco_compra{
         display: flex;
-        justify-content: space-around;
-        align-content: center;
-        flex-wrap: wrap;
-        
+        justify-content: center;
+        align-items: center;
+        flex-wrap: nowrap;
+        gap: 10px;
+        min-width: 260px; 
+        width: 100%; 
+        max-width: 250px; 
+        margin: 0 auto; 
 
         @media(max-width: 370px){
             margin: 0;
