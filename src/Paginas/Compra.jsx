@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import styled from "styled-components";
+import { Produtos } from "../Components/Produtos/Produtos";
 
 const Produto = styled.div`
     background-color: #FFF;
@@ -134,6 +135,7 @@ export const Compra = ({ produtos }) => {
     }
 
     return (
+        <>
         <Produto>
             <div className="imagem_titulo">
                 <img src={produto.imagem}></img>
@@ -165,5 +167,7 @@ export const Compra = ({ produtos }) => {
                 </div>
             </div>
         </Produto>
+        <Produtos/>
+        </>
     );
 };
