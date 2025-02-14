@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser, faCartShopping, faMagnifyingGlass, faBars } from '@fortawesome/free-solid-svg-icons';
+import { faUser, faCartShopping, faBars } from '@fortawesome/free-solid-svg-icons';
 import imgHeader from '../../Images/header_pata.png';
 import imgLogo from '../../Images/Patinhas_logo.png'
 import styled from 'styled-components';
@@ -76,42 +76,7 @@ const Icones = styled.div`
 `;
 
 
-const InputPesquisa = styled.div`
-.pesquisa {
-    flex: 1;
-    width: auto;
-    width: 16em;
-    padding: 5px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-  }
 
-  .lupa{
-    padding-left: 5px;
-    transition: 0.5s transform;
-    cursor:pointer
-
-  }
-  .lupa:hover{
-    transform: rotate(25deg);
-  }
-  
-  @media (max-width: 768px) {
-    .pesquisa {
-      margin: 10px 0;
-    }
-  }
-  @media (max-width: 640px) {
-    .pesquisa {
-      width: 10em;
-    }
-  @media (max-width: 530px) {
-    
-      display: none;
-    }
-  }
-
-`;
 
 const Lista = styled.ul`
   display: flex;
@@ -189,6 +154,16 @@ const Dropdown = styled.div`
   transition: transform 0.3s ease, height 0.3s ease;
   z-index: 1;
 
+  h1{
+    color: #fff;
+    padding-top: 5px;
+  }
+
+  hr{
+    height: 3px;
+    background-color: #fff;
+  }
+
   ul {
     margin: 0;
     padding: 0;
@@ -221,26 +196,6 @@ const Dropdown = styled.div`
 `;
 
 
-const InputPesquisa2 = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 10px 0;
-  padding: 0 10px;
-
-  .pesquisa {
-    flex: 1;
-    width: 100%;
-    padding: 5px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    margin-right: 15px;
-  }
-
-  .lupa {
-    cursor: pointer;
-  }
-`;
 
 
 export function Header({toggleCarrinho}) {
@@ -262,10 +217,7 @@ export function Header({toggleCarrinho}) {
           </MenuIcon>
         <Link to={"/"}><button className="logo" ><img src={imgLogo}></img></button></Link>
         </div>
-        {/* <InputPesquisa>
-          <input type="search" className="pesquisa" placeholder="Pesquisa"/>
-          <FontAwesomeIcon icon={faMagnifyingGlass} style={{ color: "#f5f5f5" }} className='lupa' />
-        </InputPesquisa> */}
+        
         <Icones>
           <Link to="/Usuario"><FontAwesomeIcon icon={faUser} style={{ color: "#f5f5f5" }} className='icone' /></Link>
           <FontAwesomeIcon icon={faCartShopping} style={{ color: "#f5f5f5" }} className='icone' onClick={toggleCarrinho}/>
@@ -295,10 +247,8 @@ export function Header({toggleCarrinho}) {
 
       {isDropdownOpen && (
         <Dropdown className={isDropdownOpen ? 'active' : ''}>
-          {/* <InputPesquisa2>
-            <input type="search" className="pesquisa" placeholder="Pesquisar" />
-            <FontAwesomeIcon icon={faMagnifyingGlass} style={{ color: "#f5f5f5" }} className="lupa" />
-          </InputPesquisa2> */}
+          <h1>Menu</h1>
+          <hr></hr>
           <ul>
             <li className="listaMenu">
               <Link to="/compraProduto/cachorro">Cachorro</Link>

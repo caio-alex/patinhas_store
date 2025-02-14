@@ -1,7 +1,4 @@
 import styled from "styled-components"
-import img1 from "../../Images/img1.jpg"
-import img2 from "../../Images/img2.jpg"
-import img3 from "../../Images/img3.jpg"
 
 const Hero = styled.div`
   display: flex;

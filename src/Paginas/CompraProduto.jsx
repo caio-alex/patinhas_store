@@ -2,7 +2,7 @@
 import styled from 'styled-components';
 import React from 'react';
 import { useState, useEffect } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import ProdutoLista from './ProdutoLista';
 
 
@@ -241,7 +241,7 @@ const CompraProduto = () => {
     //   // // // // /// /// /////////
 
     const [precoMax, setPrecoMax] = useState(500);
-    const [filtroCategoria, setFiltroCategoria] = useState("todos");
+    const [filtroCategoria] = useState("todos");
     const [filtroTipo, setFiltroTipo] = useState("todos")
 
     const produtosFiltrados = produtos.filter((produto) => {

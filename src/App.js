@@ -6,10 +6,11 @@ import { Footer } from './Components/Footer/footer';
 import CompraProduto from './Paginas/CompraProduto';
 import './App.css';
 import { Carrinho } from './Components/Carrinho/Carrinho';
-import Loguin from './Paginas/Login';
+import Login from './Paginas/Login';
 import { Usuario } from './Paginas/Usuario';
 import { Compra } from './Paginas/Compra';
 import { useEffect } from 'react';
+
 
 export default function App() {
   const [mostrarCarrinho, setMostraCarrinho] = useState(false);
@@ -28,6 +29,7 @@ export default function App() {
 
 
   return (
+
     <Router>
       <Header toggleCarrinho={toggleCarrinho} />
       <Carrinho mostrar={mostrarCarrinho} />
@@ -35,13 +37,11 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/compraProduto/:categoria" element={<CompraProduto />} />
         <Route path="/Usuario" element={<Usuario />} />
-        <Route path="/Login" element={<Loguin />} />
-        <Route
-          path={`/Compra/:id`}
-          element={<Compra produtos={produtos} />}
-        />
+        <Route path="/Login" element={<Login />} />
+        <Route path={`/Compra/:id`} element={<Compra produtos={produtos} />} />
       </Routes>
       <Footer />
     </Router>
+ 
   );
 }

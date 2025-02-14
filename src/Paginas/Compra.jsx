@@ -4,12 +4,15 @@ import styled from "styled-components";
 
 const Produto = styled.div`
     background-color: #FFF;
-    margin: 30px;
-    padding: 20px;
+    margin: 50px;
+    padding: 10px;
     border-radius: 20px;
     border: 2px solid #6a6fd8;
     justify-content: center;
 
+    @media(max-width: 390px){
+        margin: 10px;
+    }
     
     img{
         min-width: 215px;
@@ -25,17 +28,22 @@ const Produto = styled.div`
         flex-wrap: wrap;
         align-items: center;
         gap: 10px;
+        padding: 5px;
         @media (max-width: 750px) {  
             justify-content: center;
             
         }
-}
-
-.titulo_preco{
+    }
+    
+    .titulo_preco{
         text-align: center;
         padding: 1rem;
         gap: 10px;
         
+        h2{
+            font-weight: 0.7em;
+
+        }
         h4{
             font-weight: bold;
             align-content: center;
@@ -130,7 +138,7 @@ export const Compra = ({ produtos }) => {
             <div className="imagem_titulo">
                 <img src={produto.imagem}></img>
                 <div className="titulo_preco">
-                    <h2>{produto.titulo}</h2>
+                    <h2 className="titulo">{produto.titulo}</h2>
                     <div className="preco_compra">
                         <h4> R${(quantidade * produto.preco).toFixed(2)}</h4>
                         <input required type="number" min={1} id="quantidade" placeholder="QTD" value={quantidade} onChange={handleQuantidade}></input>

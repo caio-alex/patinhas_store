@@ -2,6 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
+
+
 const Card = styled.div`
   min-width: 12rem;
   max-width: 14rem;
@@ -96,11 +98,14 @@ const CardProduto = ({ produtos }) => {
     localStorage.setItem("produtos", JSON.stringify(produtosSalvos));
 
     window.alert(`${produtos.titulo} adicionado ao carrinho`);
+
     window.location.reload()
 
   };
 
   return (
+
+
     <div className="col-12 col-sm-6 col-md-4 col-lg-3 d-flex justify-content-center cards">
       <Card> 
       <Link to={`/Compra/${produtos.id}`} style={{ textDecoration: "none", color: "inherit" }}>
