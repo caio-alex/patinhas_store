@@ -11,6 +11,10 @@ body {
     
 }
 
+.hutVtS{
+  width: 70vw;
+  min-height: 100vh;
+}
 ::-webkit-scrollbar {
     width: 7px; 
     height: 12px; 

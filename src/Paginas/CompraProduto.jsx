@@ -265,6 +265,7 @@ const CompraProduto = () => {
                                 min="0"
                                 max="500"
                                 step="10"
+                                value={precoMax}
                                 onChange={(e) => setPrecoMax(e.target.value)}></input>
                         </div>
                     </form>
@@ -297,16 +298,12 @@ const CompraProduto = () => {
                                 <label htmlFor="formControlRange">
                                     Preço(até R$ {precoMax})
                                 </label>
-                                <input
-                                    type="range"
-                                    className="form-control-range"
-                                    id="formControlRange"
-                                    min="0"
-                                    max="500"
-                                    step="10"
-                                    value={precoMax}
-                                    onChange={(e) => setPrecoMax(Number(e.target.value))} 
-                                />
+                                <input type="range" class="form-control-range" id="formControlRange"
+                                min="0"
+                                max="500"
+                                step="10"
+                                value={precoMax}
+                                onChange={(e) => setPrecoMax(e.target.value)}></input>
                             </div>
                         </form>
                         <div className="input-group">
