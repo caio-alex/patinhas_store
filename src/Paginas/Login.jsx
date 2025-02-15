@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { useState } from "react";
 
 const DadosPerfil = styled.div`
     justify-content: center;
@@ -18,6 +19,7 @@ const Dados = styled.div`
 
     .form-row1{
         display: flex;
+        align-items: center;
         text-align: center;
         justify-content: center;
         gap: 10px;
@@ -36,29 +38,80 @@ const Dados = styled.div`
     }
 `;
 
+const EstadoButton = styled.button`
+  width: 100%;
+  padding: 10px;
+  background-color: #6a6fd8;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &:hover {
+    background-color: #575db8;
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(106, 111, 216, 0.8);
+  }
+`;
+
+const EstadoDropdown = styled.div`
+  position: relative;
+  display: inline-block;
+  width: 100%;
+
+  .dropdown-menu {
+    width: 100%;
+    max-height: 200px;
+    overflow-y: auto;
+    border-radius: 8px;
+  }
+
+  .dropdown-item {
+    padding: 10px;
+    transition: 0.3s;
+    
+    &:hover {
+      background-color: #f0f0f0;
+    }
+  }
+`;
+
+
 export default function Login() {
     const AddDadosLocalStorage = (event) => {
         event.preventDefault();
 
         const form = event.target;
         const formData = new FormData(form);
-
         const dados = Object.fromEntries(formData.entries());
-
-        if (dados.nome && dados.email && dados.senha) {
+        dados.estado = estadoSelecionado;
+        if (dados.nome && dados.email && dados.senha && dados.estado) {
+        
             localStorage.setItem("dados", JSON.stringify(dados));
             window.alert(`Os dados foram salvos com sucesso!`);
         } else {
             window.alert(`Preencha todos os campos obrigatórios.`);
         }
-    }
+    };
+
+    const estados = ["AC", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MG", "PA", "PB", "PR", "RJ", "RN", "RS", "SC", "SP", "TO"];
+    const [estadoSelecionado, setEstadoSelecionado] = useState("");
+
     return (
         <DadosPerfil>
             <h1>Atualize os Dados</h1>
             <Dados>
                 <form onSubmit={AddDadosLocalStorage}>
-                    <div class="form-row1">
-                        <div class="form-group1 col-md-8">
+                    <div className="form-row1">
+                        <div className="form-group1 col-md-8">
                             <label htmlFor="nome">Nome</label>
                             <input
                                 required
@@ -88,8 +141,8 @@ export default function Login() {
                             />
                         </div>
                     </div>
-                    <div class="form-row1 col-md-12">
-                        <div class="form-group col-md-4">
+                    <div className="form-row1 col-md-12">
+                        <div className="form-group col-md-4">
                             <label htmlFor="cidade">Cidade</label>
                             <input
                                 required
@@ -100,20 +153,35 @@ export default function Login() {
                                 placeholder="Cidade"
                             />
                         </div>
-                        <div class="form-group col-md-4">
+                        <div className="form-group col-md-4">
                             <label htmlFor="estado">Estado</label>
-                            <input
-                                required
-                                type="text"
-                                className="form-control"
-                                id="estado"
-                                name="estado"
-                                placeholder="Estado"
-                            />
+                            <EstadoDropdown>
+                                <EstadoButton
+                                    id="estado"
+                                    className="dropdown-toggle estado"
+                                    data-bs-toggle="dropdown"
+                                    aria-expanded="false"
+                                    name="estado"
+                                >
+                                    {estadoSelecionado || "Selecione um Estado"}
+                                </EstadoButton>
+                                <ul className="dropdown-menu">
+                                    {estados.map((estado, index) => (
+                                        <li key={index}>
+                                            <button
+                                                className="dropdown-item"
+                                                onClick={() => setEstadoSelecionado(estado)}
+                                            >
+                                                {estado}
+                                            </button>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </EstadoDropdown>
                         </div>
                     </div>
-                    <div class="form-row1 ">
-                        <div class="form-group col-md-8">
+                    <div className="form-row1">
+                        <div className="form-group col-md-8">
                             <label htmlFor="endereco">Endereço</label>
                             <input
                                 required
@@ -157,10 +225,9 @@ export default function Login() {
                         </div>
                     </div>
 
-
-                    <button type="submit" class="btn">Salvar</button>
+                    <button type="submit" className="btn">Salvar</button>
                 </form>
             </Dados>
         </DadosPerfil>
-    )
+    );
 }
