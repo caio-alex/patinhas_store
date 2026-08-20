@@ -86,7 +86,7 @@ const Produto = styled.div`
         gap: 10px;
         min-width: 260px; 
         width: 100%; 
-        max-width: 250px; 
+        max-width: 300px; 
         margin: 0 auto; 
 
         @media(max-width: 370px){
@@ -94,8 +94,11 @@ const Produto = styled.div`
         }
 
         input{
-            width: 25%;
-            padding: 8px;
+            width: 70px;
+            flex-shrink: 0;
+            padding: 10px 12px;
+            font-size: 1.05rem;
+            text-align: center;
             border-radius: 8px;
             border: 1px solid var(--line);
             font-family: var(--font-body);
@@ -133,7 +136,20 @@ const Produto = styled.div`
             }
         }
 
+        .dropdown-toggle{
+            padding: 12px 24px;
+            font-size: 1.05rem;
+            min-width: 140px;
+        }
+
+        .dropdown-menu{
+            min-width: 140px;
+        }
+
         .dropdown-item{
+            padding: 10px 16px;
+            font-size: 1rem;
+
             &:hover{
                 background-color: var(--accent-sun);
                 color: var(--brand-deep);
