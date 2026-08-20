@@ -6,15 +6,18 @@ const Destaques = styled.div`
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 20px;
-  margin: 10px 10px 30px;
+  gap: 12px;
+  margin: 10px 10px 40px;
 `;
 
 const TituloProdutos = styled.div`
   text-align: center;
   padding: 10px;
-  color: #6a6fd8;
-  font-weight: bold;
+
+  h2{
+    font-size: 1.6rem;
+    margin: 0;
+  }
 `;
 
 export function Produtos() {
@@ -37,7 +40,7 @@ export function Produtos() {
 
   return (
     <>
-      <TituloProdutos>
+      <TituloProdutos id="produtos">
         <h2>Produtos que seu pet vai amar!</h2>
       </TituloProdutos>
       <Destaques>

@@ -29,7 +29,7 @@ const Promocao = styled.div`
     }
     
     .esquerda{
-        background-color: #5158d9;
+        background-color: var(--brand-deep);
         border-radius: 20px;
         padding: 10px;
         color: #FFF;
@@ -39,11 +39,11 @@ const Promocao = styled.div`
     }
 
     .esquerda:hover{
-        transform: rotate(6deg);
+        transform: rotate(3deg);
     }
 
     .direita{
-        background-color: #e6b553;
+        background-color: var(--accent-coral);
         border-radius: 20px;
         padding: 10px;
         color: #FFF;
@@ -53,7 +53,7 @@ const Promocao = styled.div`
     }
 
     .direita:hover{
-        transform: rotate(-6deg);
+        transform: rotate(-3deg);
     }
     
     @media (max-width: 640px) {
@@ -88,9 +88,12 @@ const Promocao = styled.div`
 
 const TituloBeneficios = styled.div`
     text-align: center;
-    margin: 0 0 0px;
-    color: #6a6fd8;
-    font-weight: bold;
+    margin: 32px 0 0;
+
+    h2{
+      font-size: 1.6rem;
+      margin: 0;
+    }
 `
 
 export function Beneficios (){

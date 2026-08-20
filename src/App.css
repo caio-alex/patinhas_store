@@ -6,9 +6,6 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    font-family: "Poppins", serif;
-
-    
 }
 
 .hutVtS{
@@ -23,10 +20,9 @@ body {
 
 
   ::-webkit-scrollbar-thumb {
-    background: #3d42a1; /* Cor do polegar */
+    background: var(--brand-mid);
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: #171a50; /* Cor ao passar o mouse */
+    background: var(--brand-deep);
   }
-  

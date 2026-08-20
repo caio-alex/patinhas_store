@@ -4,11 +4,13 @@ import styled from "styled-components";
 import { Produtos } from "../Components/Produtos/Produtos";
 
 const Produto = styled.div`
-    background-color: #FFF;
-    margin: 50px;
-    padding: 10px;
+    background-color: var(--surface);
+    max-width: 720px;
+    margin: 40px auto;
+    padding: 20px;
     border-radius: 20px;
-    border: 2px solid #6a6fd8;
+    border: 1px solid var(--line);
+    box-shadow: 0 8px 24px rgba(22, 35, 46, 0.08);
     justify-content: center;
 
     @media(max-width: 390px){
@@ -17,10 +19,10 @@ const Produto = styled.div`
     
     img{
         min-width: 215px;
+        max-width: 260px;
         height: 235px;
+        object-fit: contain;
         justify-content: center;
-
-        
     }
     
     .imagem_titulo{
@@ -32,7 +34,6 @@ const Produto = styled.div`
         padding: 5px;
         @media (max-width: 750px) {  
             justify-content: center;
-            
         }
     }
     
@@ -41,30 +42,35 @@ const Produto = styled.div`
         padding: 1rem;
         gap: 10px;
         
-        h2{
-            font-weight: 0.7em;
-
+        h2.titulo{
+            font-size: 1.4rem;
         }
         h4{
-            font-weight: bold;
+            font-family: var(--font-tag);
+            font-weight: 700;
             align-content: center;
-            color: #6a6fd8;
+            color: var(--brand-deep);
+            background-color: var(--sand);
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 8px;
             margin-bottom: 0;
         }
     }
     
     .btn_comprar{
-        border-radius: 10px;
-        padding: 5px;
+        border-radius: 999px;
+        padding: 10px 20px;
         border: none;
-        box-shadow: 0 0 4px black;
-        transition: transform ease 0.3s;
-        background-color: #f0ba50;
+        box-shadow: 0 4px 12px rgba(255, 107, 74, 0.35);
+        transition: transform ease 0.2s, background-color 0.2s ease;
+        background-color: var(--accent-coral);
         color: #FFF;
-        font-weight: bold;
+        font-weight: 600;
+        cursor: pointer;
         &:hover{
-            transform: scale(1.1);
-            background-color: #fcc558;
+            transform: translateY(-1px);
+            background-color: #e85b3c;
         }
 
         @media(max-width: 350px){
@@ -89,36 +95,53 @@ const Produto = styled.div`
 
         input{
             width: 25%;
-            border: solid 2px #6a6fd8;
+            padding: 8px;
+            border-radius: 8px;
+            border: 1px solid var(--line);
+            font-family: var(--font-body);
+
+            &:focus{
+                outline: none;
+                border-color: var(--brand-mid);
+            }
         }
     }
 
     .pagamento{
-        margin: 10px;
+        margin: 16px 0 0;
+
+        .btn-group{
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
 
         .btn{
-            padding: 5px;
-            margin: 5px;
-            background-color: #fcc558;
-            color: #FFF;
-            font-weight: bold;
-            &:focus{
-                background-color: #a07d38;
+            padding: 8px 16px;
+            border-radius: 999px;
+            border: 1px solid var(--line);
+            background-color: var(--paper);
+            color: var(--brand-deep);
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s ease, color 0.2s ease;
+
+            &:hover, &:focus{
+                background-color: var(--accent-sun);
+                color: var(--brand-deep);
             }
         }
 
-
         .dropdown-item{
-            
             &:hover{
-                background-color: #fcc558;
-                color: #FFF;
+                background-color: var(--accent-sun);
+                color: var(--brand-deep);
             }
 
             &:focus{
-                background-color: #a07d38;
+                background-color: var(--brand-mid);
                 color: #FFF;
-                
             }
         }
     }
@@ -142,7 +165,7 @@ export const Compra = ({ produtos }) => {
         <>
         <Produto>
             <div className="imagem_titulo">
-                <img src={produto.imagem}></img>
+                <img src={produto.imagem} alt={produto.titulo}></img>
                 <div className="titulo_preco">
                     <h2 className="titulo">{produto.titulo}</h2>
                     <div className="preco_compra">
@@ -151,19 +174,19 @@ export const Compra = ({ produtos }) => {
                         <button className="btn_comprar">Comprar</button>
                     </div>
                     <div className="pagamento">
-                        <div class="btn-group" role="group" aria-label="Grupo de botões com dropdown aninhado">
-                            <button type="button" class="btn ">Crédito</button>
-                            <button type="button" class="btn ">Débito</button>
+                        <div className="btn-group" role="group" aria-label="Formas de pagamento">
+                            <button type="button" className="btn">Crédito</button>
+                            <button type="button" className="btn">Débito</button>
 
-                            <div class="dropdown">
-                                <button id="btnGroupDrop1" href="#" role="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                            <div className="dropdown">
+                                <button id="btnGroupDrop1" type="button" className="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                                     Parcela
                                 </button>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">1x</a></li>
-                                    <li><a class="dropdown-item" href="#">2x</a></li>
-                                    <li><a class="dropdown-item" href="#">3x</a></li>
-                                    <li><a class="dropdown-item" href="#">4x</a></li>
+                                <ul className="dropdown-menu">
+                                    <li><button type="button" className="dropdown-item">1x</button></li>
+                                    <li><button type="button" className="dropdown-item">2x</button></li>
+                                    <li><button type="button" className="dropdown-item">3x</button></li>
+                                    <li><button type="button" className="dropdown-item">4x</button></li>
                                 </ul>
                             </div>
                         </div>

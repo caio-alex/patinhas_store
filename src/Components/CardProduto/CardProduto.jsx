@@ -7,18 +7,19 @@ import styled from "styled-components";
 const Card = styled.div`
   min-width: 12rem;
   max-width: 14rem;
-  box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.2);
-  background-color: #fff;
-  border-radius: 10px;
-  margin: 20px;
+  box-shadow: 0 2px 8px rgba(27, 46, 34, 0.1);
+  background-color: var(--surface);
+  border-radius: 16px;
+  margin: 10px;
   padding-top: 10px;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
   justify-content: space-between;
-  transition:  ease 0.6s;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   text-decoration: none;
   list-style: none;
+  overflow: hidden;
 
   .link{
     text-decoration: none;
@@ -26,14 +27,16 @@ const Card = styled.div`
   }
 
   &:hover{
-    
-    transform: scale(1.04);
+    transform: translateY(-6px);
+    box-shadow: 0 16px 28px rgba(27, 46, 34, 0.16);
   }
   
   .card-img-top{
-    height: 220px;
-    
-    
+    height: 200px;
+    width: 100%;
+    object-fit: contain;
+    padding: 8px;
+    box-sizing: border-box;
   }  
 
   
@@ -41,40 +44,63 @@ const Card = styled.div`
     height: auto;
     text-decoration: none;
     list-style: none;
+    padding: 0 12px 12px;
   }
 
   .card-title{
-    padding: 10px;
-    font-size: 0.9em;
-    
+    padding: 4px 0 10px;
+    font-size: 0.95em;
+    font-family: var(--font-body);
+    font-weight: 600;
+    color: var(--ink);
   }
   
   .card-body {
-    padding-bottom: 5px;
+    padding-bottom: 0;
   }
   
   .card-text {
-    padding: 10px;
-    padding-bottom: 0;
+    padding: 0;
+    padding-bottom: 12px;
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
 
     span {
-      color: #6a6fd8;
-      font-weight: bold;
+      font-family: var(--font-tag);
+      font-size: 0.7rem;
+      color: var(--brand-mid);
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+
+    .preco{
+      font-family: var(--font-tag);
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: var(--brand-deep);
+      background-color: var(--sand);
+      padding: 2px 8px;
+      border-radius: 6px;
     }
   }
   
   .btn {
     color: #fff;
-    background-color: #5158d9;
+    background-color: var(--accent-coral);
     text-decoration: none;
-    padding: 8px 16px;
-    border-radius: 4px;
+    padding: 10px 16px;
+    border-radius: 999px;
     text-align: center;
-    
+    font-weight: 600;
+    border: none;
     width: 100%;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.15s ease;
 
     &:hover {
-      background-color: #6a6fd8;
+      background-color: #e85b3c;
+      transform: scale(1.02);
     }
   }
 `;
@@ -116,11 +142,11 @@ const CardProduto = ({ produtos }) => {
           <h5 className="card-title">{produtos.titulo}</h5>
         </div>
           <p className="card-text">
-            <span>Á partir de </span>R${produtos.preco}
+            <span>a partir de</span> <span className="preco">R${produtos.preco}</span>
           </p>
           
           <button onClick={AdicionarLocalStorage} className="btn" >
-            Adicionar ao <i class="fa-solid fa-cart-shopping" ></i>
+            Adicionar <i className="fa-solid fa-cart-shopping" ></i>
           </button>
           </div>
       </Card>
