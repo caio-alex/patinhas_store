@@ -4,6 +4,8 @@
 O projeto utiliza uma série de ferramentas e conceitos, como CRUD, React Hooks, React Router, LocalStorage, componetização, e animações com styled-components.
 Além disso, o projeto emprega Bootstrap para estilização básica e elementos responsivos, complementado com Styled Components para personalizações avançadas e animações.</p>
 
+<img width="1851" height="994" alt="image" src="https://github.com/user-attachments/assets/c75697da-1658-4c46-b71c-09ab425b72d3" />
+
 <h2>🚀 Funcionalidades</h2>
 <li>CRUD (Create, Read, Update, Delete): Manipulação dinâmica de dados.</li>
 <li>Utilizando fetch para pegar a API dos produtos- link do repositório da api: https://github.com/caio-alex/produtosPet</li>
