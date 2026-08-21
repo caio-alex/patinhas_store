@@ -4,7 +4,6 @@
 
 E-commerce de petshop feito em React, com identidade visual própria (azul-marinho + coral) e catálogo, autenticação e checkout consumindo uma API própria.
 
-![Patinhas Store - listagem de produtos](./docs/screenshot-catalogo.png)
 <img width="1851" height="994" alt="image" src="https://github.com/user-attachments/assets/c75697da-1658-4c46-b71c-09ab425b72d3" />
 ## 🌐 Demo ao vivo
 
