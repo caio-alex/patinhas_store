@@ -1,8 +1,19 @@
+<img width="1851" height="994" alt="image" src="https://github.com/user-attachments/assets/c75697da-1658-4c46-b71c-09ab425b72d3" />
+
 # 🐾 Patinhas Store
 
 E-commerce de petshop feito em React, com identidade visual própria (azul-marinho + coral) e catálogo, autenticação e checkout consumindo uma API própria.
 
-<img width="1851" height="994" alt="image" src="https://github.com/user-attachments/assets/c75697da-1658-4c46-b71c-09ab425b72d3" />
+![Patinhas Store - listagem de produtos](./docs/screenshot-catalogo.png)
+
+## 🌐 Demo ao vivo
+
+- **Site:** https://patinhasstore.vercel.app
+- **API:** https://patinhas-back-end.onrender.com
+
+Front hospedado no Vercel, API no Render, banco no Supabase.
+
+> Nota: a API roda no plano gratuito do Render, que "dorme" depois de um tempo sem uso — a primeira requisição depois de um período parado pode demorar alguns segundos pra API acordar.
 
 ## Arquitetura
 
@@ -13,14 +24,16 @@ Este repositório contém **só o front-end**. O backend (autenticação, produt
 Os dois se comunicam por HTTP — a API precisa estar rodando (local ou hospedada) para o site funcionar de verdade (login, catálogo, compras).
 
 ```
-┌─────────────────┐        HTTP        ┌──────────────────────┐
-│  Patinhas Store  │  ───────────────▶  │  Patinhas Back-End    │
-│  (React, aqui)    │  ◀───────────────  │  (Express + Prisma)   │
-└─────────────────┘                    └──────────┬───────────┘
-                                                    │
-                                             ┌──────▼──────┐
-                                             │  PostgreSQL  │
-                                             └─────────────┘
+┌───────────────────┐        HTTP        ┌────────────────────────┐
+│   Patinhas Store    │  ───────────────▶  │   Patinhas Back-End     │
+│   (React, aqui)      │  ◀───────────────  │   (Express + Prisma)    │
+│   hospedado: Vercel  │                    │   hospedado: Render     │
+└───────────────────┘                    └───────────┬────────────┘
+                                                        │
+                                                 ┌──────▼──────┐
+                                                 │  PostgreSQL  │
+                                                 │  (Supabase)   │
+                                                 └─────────────┘
 ```
 
 ## 🚀 Funcionalidades
@@ -77,9 +90,9 @@ O site abre em `http://localhost:3000`.
 
 ## Variáveis de ambiente
 
-| Variável              | Descrição                          | Exemplo                  |
-|------------------------|-------------------------------------|---------------------------|
-| `REACT_APP_API_URL`    | URL onde a API está rodando         | `http://localhost:3333`   |
+| Variável              | Descrição                          | Local                     | Produção                              |
+|------------------------|-------------------------------------|----------------------------|-----------------------------------------|
+| `REACT_APP_API_URL`    | URL onde a API está rodando         | `http://localhost:3333`   | `https://patinhas-back-end.onrender.com` |
 
 ## Scripts disponíveis
 
@@ -88,6 +101,11 @@ O site abre em `http://localhost:3000`.
 | `npm start`      | Roda em modo desenvolvimento             |
 | `npm run build`  | Gera o build de produção em `build/`     |
 | `npm test`       | Roda os testes                           |
+
+## 👤 Autor
+
+**Caio Alexandre** — estudante de Engenharia de Software (FIAP)
+[LinkedIn](https://linkedin.com/in/caio-alexandre-b778aa221)
 
 ## 👤 Autor
 
