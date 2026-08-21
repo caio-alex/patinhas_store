@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react"; // Não esqueça de adicionar o useEffect aqui no topo do arquivo!
 import { useParams } from "react-router-dom";
 import styled from "styled-components";
-import { Produtos } from "../Components/Produtos/Produtos";
+import Produtos from '../Components/Produtos/Produtos';
 
 const Produto = styled.div`
     background-color: var(--surface);
@@ -163,13 +163,29 @@ const Produto = styled.div`
     }
     `
 
-export const Compra = ({ produtos }) => {
+// 1. Removemos o 'produtos' de dentro dos parênteses. A tela agora é independente!
+export const Compra = () => {
     const [quantidade, setQuantidade] = useState(1);
-
+    const [produto, setProduto] = useState(null); // 2. Novo estado para guardar o produto da API
     const { id } = useParams();
-    const produto = produtos.find((item) => item.id === parseInt(id));
+
+    // 3. Fazemos a busca na API usando o ID da URL
+    useEffect(() => {
+        fetch('http://localhost:3334/produtos')
+            .then((resposta) => resposta.json())
+            .then((dados) => {
+                // Garante que é uma lista, igual fizemos na outra tela
+                const lista = Array.isArray(dados) ? dados : (dados.produtos || []);
+                // Acha o produto certo
+                const itemEncontrado = lista.find((item) => item.id === parseInt(id));
+                setProduto(itemEncontrado);
+            })
+            .catch((erro) => console.error("Erro ao buscar a compra:", erro));
+    }, [id]);
+
+    // 4. Mostra uma mensagem de carregamento enquanto a API responde
     if (!produto) {
-        return <h2>Produto não encontrado</h2>;
+        return <h2 style={{textAlign: "center", margin: "50px"}}>Carregando detalhes do petisco...</h2>;
     }
 
     const handleQuantidade = (event) => {
@@ -177,11 +193,22 @@ export const Compra = ({ produtos }) => {
         setQuantidade(novaQtd);
     }
 
+    // Mantemos a nossa função blindada de URL
+    const getImagemUrl = (caminho) => {
+        if (!caminho) return '';
+        if (caminho.startsWith('http')) return caminho;
+        const caminhoCorrigido = caminho.startsWith('/') ? caminho : `/${caminho}`;
+        return `${window.location.origin}${caminhoCorrigido}`;
+    };
+
     return (
         <>
         <Produto>
             <div className="imagem_titulo">
-                <img src={produto.imagem} alt={produto.titulo}></img>
+                <img 
+                    src={getImagemUrl(produto.imagem)} 
+                    alt={produto.titulo} 
+                />
                 <div className="titulo_preco">
                     <h2 className="titulo">{produto.titulo}</h2>
                     <div className="preco_compra">
