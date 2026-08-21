@@ -1,22 +1,95 @@
-﻿# Patinhas Store
+# 🐾 Patinhas Store
 
-<p>Este é um E-commerce de petshop pdesenvolvido em React.js, criado com o objetivo de praticar e consolidar conhecimentos em desenvolvimento front-end moderno.
-O projeto utiliza uma série de ferramentas e conceitos, como CRUD, React Hooks, React Router, LocalStorage, componetização, e animações com styled-components.
-Além disso, o projeto emprega Bootstrap para estilização básica e elementos responsivos, complementado com Styled Components para personalizações avançadas e animações.</p>
+E-commerce de petshop feito em React, com identidade visual própria (azul-marinho + coral) e catálogo, autenticação e checkout consumindo uma API própria.
 
-<h2>🚀 Funcionalidades</h2>
-<li>CRUD (Create, Read, Update, Delete): Manipulação dinâmica de dados.</li>
-<li>Utilizando fetch para pegar a API dos produtos- link do repositório da api: https://github.com/caio-alex/produtosPet</li>
-<li>Gerenciamento de estado com Hooks: Uso de useState, useEffect e outros hooks do React.</li>
-<li>Navegação SPA com React Router: Múltiplas páginas e rotas dinâmicas.</li>
-<li>Animações suaves: Utilização de styled-components e animações com keyframes.</li>
-<li>Armazenamento local: Dados persistidos no navegador via LocalStorage.</li>
-<li>Responsividade: Layout adaptável para diferentes tamanhos de tela com Bootstrap.</li>
+![Patinhas Store - listagem de produtos](./docs/screenshot-catalogo.png)
 
-<h2>🛠️ Tecnologias Utilizadas</h2>
-<li>React.js</li>
-<li>React Router Dom</li>
-<li>Styled Components</li>
-<li>Bootstrap</li>
-<li>LocalStorage</li>
-<li>JavaScript (ES6+)</li>
+## Arquitetura
+
+Este repositório contém **só o front-end**. O backend (autenticação, produtos e pedidos, com PostgreSQL) vive num repositório separado:
+
+👉 **API:** https://github.com/caio-alex/Patinhas-Back-End
+
+Os dois se comunicam por HTTP — a API precisa estar rodando (local ou hospedada) para o site funcionar de verdade (login, catálogo, compras).
+
+```
+┌─────────────────┐        HTTP        ┌──────────────────────┐
+│  Patinhas Store  │  ───────────────▶  │  Patinhas Back-End    │
+│  (React, aqui)    │  ◀───────────────  │  (Express + Prisma)   │
+└─────────────────┘                    └──────────┬───────────┘
+                                                    │
+                                             ┌──────▼──────┐
+                                             │  PostgreSQL  │
+                                             └─────────────┘
+```
+
+## 🚀 Funcionalidades
+
+- Catálogo de produtos por categoria, com filtros de preço e tipo
+- Autenticação real: cadastro, login e sessão (JWT + refresh token em cookie httpOnly)
+- Rotas protegidas (perfil e pedidos exigem login)
+- Checkout com preço calculado no servidor (não confia no valor vindo do navegador)
+- Carrinho de compras (rascunho local, antes da confirmação)
+- Totalmente responsivo
+
+## 🛠️ Tecnologias
+
+- React.js + React Router
+- styled-components
+- Context API (estado de autenticação)
+- Bootstrap (grid/responsividade)
+
+## 📁 Estrutura do projeto
+
+```
+src/
+├── context/AuthContext.jsx     # estado global de sessão
+├── services/api.js             # cliente HTTP central (fala com a API)
+├── Components/                 # peças reutilizáveis de UI
+│   ├── Header/ Footer/ HeroSection/
+│   ├── Produtos/ CardProduto/ Carrinho/
+│   └── RotaPrivada/             # bloqueia rota pra quem não está logado
+└── Paginas/                     # uma tela por rota
+    ├── Home.jsx
+    ├── Login.jsx / Cadastro.jsx
+    ├── Usuario.jsx / Pedidos.jsx   (rotas protegidas)
+    └── CompraProduto.jsx / Compra.jsx
+```
+
+## ⚙️ Rodando localmente
+
+1. Suba a API primeiro (veja o README do [repositório do backend](https://github.com/caio-alex/Patinhas-Back-End))
+2. Configure o front:
+
+   ```bash
+   cp .env.example .env
+   # confira se REACT_APP_API_URL aponta pra onde a API está rodando
+   ```
+
+3. Instale e rode:
+
+   ```bash
+   npm install
+   npm start
+   ```
+
+O site abre em `http://localhost:3000`.
+
+## Variáveis de ambiente
+
+| Variável              | Descrição                          | Exemplo                  |
+|------------------------|-------------------------------------|---------------------------|
+| `REACT_APP_API_URL`    | URL onde a API está rodando         | `http://localhost:3333`   |
+
+## Scripts disponíveis
+
+| Comando         | O que faz                              |
+|------------------|------------------------------------------|
+| `npm start`      | Roda em modo desenvolvimento             |
+| `npm run build`  | Gera o build de produção em `build/`     |
+| `npm test`       | Roda os testes                           |
+
+## 👤 Autor
+
+**Caio Alexandre** — estudante de Engenharia de Software (FIAP)
+[LinkedIn](https://linkedin.com/in/caio-alexandre-b778aa221)
