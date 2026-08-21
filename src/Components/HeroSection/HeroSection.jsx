@@ -35,7 +35,7 @@ export function HeroSection() {
             <p>Na Patinhas Store, você encontra tudo o que seu pet precisa para ser feliz e saudável!</p>
         </TextoHero>
         <ImagemHero>
-            <img src='https://png.pngtree.com/png-vector/20240705/ourmid/pngtree-dog-and-cat-friends-portrait-ginger-kitten-sitting-looking-at-each-png-image_12667174.png'></img>
+            <img src='https://png.pngtree.com/png-vector/20240705/ourmid/pngtree-dog-and-cat-friends-portrait-ginger-kitten-sitting-looking-at-each-png-image_12667174.png' alt="Cachorro sorrindo"></img>
         </ImagemHero>
         </Hero>
     )
