@@ -106,7 +106,4 @@ O site abre em `http://localhost:3000`.
 **Caio Alexandre** — estudante de Engenharia de Software (FIAP)
 [LinkedIn](https://linkedin.com/in/caio-alexandre-b778aa221)
 
-## 👤 Autor
 
-**Caio Alexandre** — estudante de Engenharia de Software (FIAP)
-[LinkedIn](https://linkedin.com/in/caio-alexandre-b778aa221)
