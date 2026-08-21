@@ -3,11 +3,14 @@ import imgLogo from '../../Images/Patinhas_logo.png'
 import { Link } from "react-router-dom";
 
 const Footers = styled.div`
-    background-color: #5158d9;
+    background-color: var(--brand-deep);
+    padding-top: 24px;
+    margin-top: 40px;
     
     .logo_img{
-        width: 7rem;
-        height: 6rem;
+        width: 6rem;
+        height: 5rem;
+        object-fit: contain;
         margin: auto;
         display: flex;
         justify-content: center;
@@ -35,9 +38,11 @@ const Form = styled.div`
     width: 30vw;
 
     h4{
-       color: #171a50;
+       color: #fff;
         text-align: center;
-        font-size: 1.5rem;
+        font-size: 1.3rem;
+        font-family: var(--font-display);
+        font-weight: 500;
     }
 
     @media (max-width: 750px) {
@@ -67,12 +72,13 @@ const Form = styled.div`
     .btn{
         border: none;
         text-align: center;
-        border-radius: 10px;
+        border-radius: 999px;
         margin: 10px auto;
         padding: 10px 20px;
-        background-color: #e6b553;
+        background-color: var(--accent-coral);
         color: #fff;
         cursor: pointer;
+        font-weight: 600;
         transition: background-color 0.3s ease;
     }
 
@@ -83,17 +89,19 @@ const Form = styled.div`
     button{
         border: none;
         text-align: center;
-        border-radius: 10px;
+        border-radius: 999px;
         margin: 10px auto;
         padding: 10px 20px;
-        background-color: #e6b553;
+        background-color: var(--accent-coral);
         color: #fff;
         cursor: pointer;
+        font-weight: 600;
         transition: background-color 0.3s ease;
     }
 
     button:hover {
-        background-color: #ff7425;
+        background-color: var(--accent-sun);
+        color: var(--brand-deep);
     }
 `
 
@@ -103,7 +111,10 @@ const Abas = styled.ul`
     padding: 0;
     
     .titulo{
-        color: #171a50;
+        color: #fff;
+        font-family: var(--font-display);
+        font-weight: 500;
+        font-size: 1.1rem;
     }
 
     .topicos{
@@ -113,12 +124,12 @@ const Abas = styled.ul`
     }
 
     a {
-        color: #fff;
+        color: rgba(255,255,255,0.85);
         transition: color 0.3s ease;
     }
 
     a:hover {
-        color: #ff9e57;
+        color: var(--accent-sun);
     }
     @media (max-width: 768px) {
         order: 2;
@@ -142,7 +153,7 @@ const ListaInput = styled.div`
     
     }
     .dropdown-item:hover{
-        background-color: #3d42a1;
+        background-color: var(--brand-mid);
         color: #fff;
     }
 `
@@ -150,42 +161,41 @@ const ListaInput = styled.div`
 export function Footer() {
     return (
         <Footers>
-            <img src={imgLogo} className="logo_img"></img>
+            <img src={imgLogo} className="logo_img" alt="Patinhas Store"></img>
             <ItensFooter>
                 <Abas>
                     <ul className="topicos">
                         <h4 className="titulo">Páginas</h4>
-                        <Link to="/compraProduto/cachorro"><li><a href="#">Cachorro</a></li></Link>
-                        <Link to="/compraProduto/gato"><li><a href="#">Gato</a></li></Link>
-                        <Link to="/compraProduto/aves"><li><a href="#">Aves</a></li></Link>
-                        <Link to="/compraProduto/peixe"><li><a href="#">Peixes</a></li></Link>
-                        <Link to="/compraProduto/casajardim"><li><a href="#">Casa & Jardim</a></li></Link>
-                        
+                        <li><Link to="/compraProduto/cachorro">Cachorro</Link></li>
+                        <li><Link to="/compraProduto/gato">Gato</Link></li>
+                        <li><Link to="/compraProduto/aves">Aves</Link></li>
+                        <li><Link to="/compraProduto/peixe">Peixes</Link></li>
+                        <li><Link to="/compraProduto/casajardim">Casa & Jardim</Link></li>
                     </ul>
                     
                     <ul className="topicos">
                         <h4 className="titulo">Nossas Redes</h4>
-                        <li><a href="#">Instagram</a></li>
-                        <li><a href="#">Facebook</a></li>
-                        <li><a href="#">YouTube</a></li>
-                        <li><a href="#">X</a></li>
+                        <li><a href="https://instagram.com" target="_blank" rel="noreferrer">Instagram</a></li>
+                        <li><a href="https://facebook.com" target="_blank" rel="noreferrer">Facebook</a></li>
+                        <li><a href="https://youtube.com" target="_blank" rel="noreferrer">YouTube</a></li>
+                        <li><a href="https://x.com" target="_blank" rel="noreferrer">X</a></li>
                     </ul>
                 </Abas>
                 <Form>
                     <h4>Receba promoções e novidades para o seu pet!</h4>
                     <ListaInput>
                         <input placeholder="email" type="email"></input>
-                        <div class="dropdown">
-                            <a class="btn btn-secondary " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <div className="dropdown">
+                            <button type="button" className="btn btn-secondary" data-bs-toggle="dropdown" aria-expanded="false">
                                 Seu Pet
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Cachorro</a></li>
-                                <li><a class="dropdown-item" href="#">Gato</a></li>
-                                <li><a class="dropdown-item" href="#">Ave</a></li>
-                                <li><a class="dropdown-item" href="#">Peixe</a></li>
+                            </button>
+                            <ul className="dropdown-menu">
+                                <li><button type="button" className="dropdown-item">Cachorro</button></li>
+                                <li><button type="button" className="dropdown-item">Gato</button></li>
+                                <li><button type="button" className="dropdown-item">Ave</button></li>
+                                <li><button type="button" className="dropdown-item">Peixe</button></li>
                             </ul>
-                            <button>Enviar</button>
+                            <button type="button">Enviar</button>
                         </div>
                     </ListaInput>
                 </Form>

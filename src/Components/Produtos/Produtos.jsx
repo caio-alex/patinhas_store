@@ -6,49 +6,62 @@ const Destaques = styled.div`
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 20px;
-  margin: 10px 10px 30px;
+  gap: 12px;
+  margin: 10px 10px 40px;
 `;
 
 const TituloProdutos = styled.div`
   text-align: center;
   padding: 10px;
-  color: #6a6fd8;
-  font-weight: bold;
+
+  h2{
+    font-size: 1.6rem;
+    margin: 0;
+  }
 `;
 
-export function Produtos() {
-  const [produto, setProdutos] = useState([]);
+export default function Produtos() {
+  // Estado guardando a lista (plural)
+  const [produtos, setProdutos] = useState([]);
 
   useEffect(() => {
-    async function fetchProdutos() {
-      try {
-        const response = await fetch(
-          "https://raw.githubusercontent.com/caio-alex/produtosPet/refs/heads/main/produtos.json"
-        );
-        const data = await response.json();
-        setProdutos(data);
-      } catch (error) {
-        console.error("Erro ao buscar produtos:", error);
-      }
-    }
-    fetchProdutos();
+    fetch('http://localhost:3334/produtos')
+      .then((resposta) => resposta.json())
+      .then((dados) => {
+        console.log("O que veio do Back-End?", dados); // Espiando a resposta
+        
+        // Verifica se a resposta é diretamente uma lista
+        if (Array.isArray(dados)) {
+          setProdutos(dados);
+        } 
+        // Verifica se a lista veio dentro de um objeto (ex: dados.produtos ou dados.data)
+        else if (dados && Array.isArray(dados.produtos)) {
+          setProdutos(dados.produtos);
+        } 
+        // Se vier qualquer outra coisa (como um erro), mantém a lista vazia para não quebrar
+        else {
+          console.error("Formato inesperado:", dados);
+          setProdutos([]); 
+        }
+      })
+      .catch((erro) => console.error("Erro ao buscar produtos:", erro));
   }, []);
 
   return (
     <>
-      <TituloProdutos>
+      <TituloProdutos id="produtos">
         <h2>Produtos que seu pet vai amar!</h2>
       </TituloProdutos>
       <Destaques>
-        {produto.slice(0, 3).map((produtos) => (
-          <CardProduto key={produtos.id} produtos={produtos} />
+        {produtos?.slice(0, 3).map((item) => (
+          <CardProduto key={item.id} produtos={item} /> 
         ))}
       </Destaques>
+      
       <TituloProdutos><h2>Em promoção!</h2></TituloProdutos>
       <Destaques>
-        {produto.slice(4, 7).map((produtos) => (
-          <CardProduto key={produtos.id} produtos={produtos} />
+        {produtos?.slice(4, 7).map((item) => (
+          <CardProduto key={item.id} produtos={item} /> 
         ))}
       </Destaques>
     </>

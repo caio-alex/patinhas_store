@@ -1,6 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faCartShopping, faBars } from '@fortawesome/free-solid-svg-icons';
-import imgHeader from '../../Images/header_pata.png';
 import imgLogo from '../../Images/Patinhas_logo.png'
 import styled from 'styled-components';
 import { useState} from 'react';
@@ -12,14 +11,12 @@ const Navbar = styled.nav`
   top: 0;
   left: 0;
   width: 100%;
-  background-color: #fff;
-   z-index: 1000;
-  background-image: url(${imgHeader});
-  background-size: cover;
-  background-position: center;
+  background-color: var(--brand-deep);
+  z-index: 1000;
   display: flex;
   flex-direction: column;
   align-items: center;
+  box-shadow: 0 4px 16px rgba(27, 46, 34, 0.18);
 `;
 
 const Menu = styled.div`
@@ -36,10 +33,12 @@ const Menu = styled.div`
     margin: 0;
     border: none;
     background: none;
+    cursor: pointer;
 
     img{
-      width: 5rem;
-      height: 4rem;
+      width: 4rem;
+      height: 3.2rem;
+      object-fit: contain;
     }
 
     @media (max-width: 390px) {
@@ -80,42 +79,39 @@ const Icones = styled.div`
 
 const Lista = styled.ul`
   display: flex;
-  justify-content: space-around; 
+  justify-content: center;
+  gap: 6px;
   list-style: none;
   width: 100%;
-  padding: 0; 
-  margin-top: 10px; 
+  padding: 6px 0 14px;
+  margin-top: 4px;
 
   .listaMenu {
     position: relative;
-    transition: ease 0.6s;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border-radius: 999px;
+    padding: 6px 16px;
   }
 
-  .listaMenu::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    width: 0;
-    height: 3px;
-    background-color: #fff;
-    transform: translateX(-50%);
-    border-radius: 80px;
-    transition: width 0.4s ease, background-color 0.4s ease;
+  .listaMenu:hover {
+    background-color: var(--accent-sun);
+    transform: translateY(-1px);
   }
 
-  .listaMenu:hover::after {
-    width: 100%;
+  .listaMenu:hover a {
+    color: var(--brand-deep);
   }
 
   a {
     text-decoration: none;
     color: #fff;
+    font-weight: 500;
+    font-size: 0.95rem;
   }
 
   @media (max-width: 768px) {
     flex-wrap: wrap; 
-    justify-content: space-around;
+    justify-content: center;
   }
 
   @media (max-width: 530px) {
@@ -149,7 +145,7 @@ const Dropdown = styled.div`
   height: 0;
   overflow: hidden;
   border-radius: 10px;
-  background-color: #032341f0;
+  background-color: var(--brand-deep);
   text-align: center;
   transition: transform 0.3s ease, height 0.3s ease;
   z-index: 1;
@@ -176,8 +172,12 @@ const Dropdown = styled.div`
   }
 
   li.listaMenu:hover {
-    background-color: #02182cef;
+    background-color: var(--accent-sun);
     border-radius: 10px;
+  }
+
+  li.listaMenu:hover a {
+    color: var(--brand-deep);
   }
 
   a {
@@ -215,7 +215,7 @@ export function Header({toggleCarrinho}) {
           <MenuIcon onClick={toggleDropdown}>
             <FontAwesomeIcon icon={faBars} style={{ color: '#fff' }} />
           </MenuIcon>
-        <Link to={"/"}><button className="logo" ><img src={imgLogo}></img></button></Link>
+        <Link to={"/"}><button className="logo" ><img src={imgLogo} alt="Patinhas Store"></img></button></Link>
         </div>
         
         <Icones>
