@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import cachorroImg from "../../Images/hero-pets.png";
+import cachorroImg from "public/produtos/hero-pets.png";
 const Hero = styled.div`
   display: flex;
   align-items: center;
