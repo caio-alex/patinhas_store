@@ -1,4 +1,3 @@
-
 import styled from 'styled-components';
 import React from 'react';
 import { useState, useEffect } from 'react';
@@ -6,28 +5,11 @@ import { useParams } from 'react-router-dom';
 import ProdutoLista from './ProdutoLista';
 
 
-const Filtro = styled.div`
-    position: sticky; 
-    top: 120px;
-    background-color: #f5f5fa;
-    width: 25vw;
-    height: 100%; 
-    padding: 20px;
-    margin: 20px;
-    border-radius: 20px;
-    border: 2px solid #6a6fd8;
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-
-    @media (max-width: 650px) {
-        display: none;
-    }
-
+const filtroStyles = `
     h3 {
         text-align: center;
-        color: #6a6fd8;
-        font-size: 1.5rem;
+        color: var(--brand-deep);
+        font-size: 1.3rem;
         margin-bottom: 10px;
     }
 
@@ -39,14 +21,14 @@ const Filtro = styled.div`
         gap: 10px;
 
         label {
-            color: #5158d9;
-            font-weight: bold;
-            font-size: 1rem;
+            color: var(--brand-mid);
+            font-weight: 600;
+            font-size: 0.9rem;
         }
 
         .form-control-range {
             width: 90%;
-            accent-color: #6a6fd8; 
+            accent-color: var(--accent-coral);
         }
     }
 
@@ -56,34 +38,38 @@ const Filtro = styled.div`
         margin: 10px;
         width: 100%;
 
-        .input-group-prepend {
-            display: flex;
-
-            button {
-                background-color: #6a6fd8;
-                color: #fff;
-                font-weight: bold;
-                border: none;
-                border-radius: 5px;
-                padding: 5px 10px;
-                transition: background-color 0.3s;
-
-                &:hover {
-                    background-color: #5158d9;
-                }
-            }
-        }
-
         .custom-select {
-            border: 1px solid #6a6fd8;
-            border-radius: 5px;
-            padding: 5px;
-            font-size: 1rem;
-            color: #5158d9;
-            width:90%;
-
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            padding: 8px;
+            font-size: 0.95rem;
+            font-family: var(--font-body);
+            color: var(--ink);
+            width: 90%;
+            background-color: var(--paper);
         }
     }
+`;
+
+const Filtro = styled.div`
+    position: sticky; 
+    top: 120px;
+    background-color: var(--surface);
+    width: 25vw;
+    height: 100%; 
+    padding: 24px;
+    margin: 20px;
+    border-radius: 20px;
+    border: 1px solid var(--line);
+    box-shadow: 0 4px 16px rgba(22, 35, 46, 0.08);
+    display: flex;
+    flex-direction: column;
+
+    @media (max-width: 650px) {
+        display: none;
+    }
+
+    ${filtroStyles}
 `;
 
 
@@ -103,18 +89,21 @@ const DropdownButton = styled.button`
   left: 10px;
   height: 8vh;
   width: 8vw;
+  min-width: 52px;
+  min-height: 52px;
 
-  background-color: #6a6fd8;
+  background-color: var(--accent-coral);
   color: #fff;
   border: none;
   border-radius: 50px;
   font-size: 1rem;
   z-index: 3;
   cursor: pointer;
-  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(255, 107, 74, 0.35);
+  transition: background-color 0.2s ease;
 
   &:hover {
-    background-color: #5158d9;
+    background-color: #e85b3c;
   }
 
 
@@ -127,13 +116,12 @@ const FiltroDropdown = styled.div`
   position: absolute;
   top: 150px;
   padding: 20px;
-  background-color: #f5f5fa;
+  background-color: var(--surface);
   height: auto;
-  padding: 20px;   
   margin: 20px;
   border-radius: 20px;    
-  border: 2px solid #6a6fd8;
-  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--line);
+  box-shadow: 0 8px 20px rgba(22, 35, 46, 0.16);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -144,65 +132,7 @@ const FiltroDropdown = styled.div`
     display: none;
   }
 
-  h3 {
-        text-align: center;
-        color: #6a6fd8;
-        font-size: 1.5rem;
-        margin-bottom: 10px;
-    }
-
-    .form-group {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        gap: 10px;
-
-        label {
-            color: #5158d9;
-            font-weight: bold;
-            font-size: 1rem;
-        }
-
-        .form-control-range {
-            width: 90%;
-            accent-color: #6a6fd8; 
-        }
-    }
-
-    .input-group {
-        display: flex;
-        gap: 5px;
-        margin: 10px;
-
-        .input-group-prepend {
-            display: flex;
-
-            button {
-                background-color: #6a6fd8;
-                color: #fff;
-                font-weight: bold;
-                border: none;
-                border-radius: 5px;
-                padding: 5px 10px;
-                transition: background-color 0.3s;
-
-                &:hover {
-                    background-color: #5158d9;
-                }
-            }
-        }
-
-        .custom-select {
-            border: 1px solid #6a6fd8;
-            border-radius: 5px;
-            padding: 5px;
-            font-size: 1rem;
-            color: #5158d9;
-            width: 90%;
-
-        }
-    }
+  ${filtroStyles}
 `;
 
 const CardsLista = styled.div`
@@ -231,14 +161,11 @@ const CompraProduto = () => {
         fetchProdutos();
     }, [categoria]);
 
-    //  // // // // // // // //
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
     const toggleDropdown = () => {
         setIsDropdownOpen(!isDropdownOpen);
     }
-
-    //   // // // // /// /// /////////
 
     const [precoMax, setPrecoMax] = useState(500);
     const [filtroCategoria] = useState("todos");
@@ -257,11 +184,11 @@ const CompraProduto = () => {
                 <div>
                     <h3>Filtros</h3>
                     <form>
-                        <div class="form-group">
+                        <div className="form-group">
                         <label htmlFor="formControlRange">
                             Preço(até R$ {precoMax})
                         </label>
-                            <input type="range" class="form-control-range" id="formControlRange"
+                            <input type="range" className="form-control-range" id="formControlRange"
                                 min="0"
                                 max="500"
                                 step="10"
@@ -286,7 +213,7 @@ const CompraProduto = () => {
                 </div>
             </Filtro>
             <DropdownButton onClick={toggleDropdown}>
-                {isDropdownOpen ? <i class="fa-solid fa-xmark"></i> : <i class="fa-solid fa-filter"></i>}
+                {isDropdownOpen ? <i className="fa-solid fa-xmark"></i> : <i className="fa-solid fa-filter"></i>}
             </DropdownButton>
 
             {isDropdownOpen && (
@@ -295,10 +222,10 @@ const CompraProduto = () => {
                         <h3>Filtros</h3>
                         <form>
                             <div className="form-group">
-                                <label htmlFor="formControlRange">
+                                <label htmlFor="formControlRangeMobile">
                                     Preço(até R$ {precoMax})
                                 </label>
-                                <input type="range" class="form-control-range" id="formControlRange"
+                                <input type="range" className="form-control-range" id="formControlRangeMobile"
                                 min="0"
                                 max="500"
                                 step="10"

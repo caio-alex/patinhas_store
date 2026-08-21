@@ -1,15 +1,41 @@
 @import "@fortawesome/fontawesome-free/css/all.min.css";
-@import url('https://fonts.googleapis.com/css2?family=Abel&family=Comfortaa:wght@300..700&family=Indie+Flower&family=Jacquard+12&family=Jersey+10&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Mukta:wght@200;300;400;500;600;700;800&family=Noto+Sans+JP:wght@100..900&family=Noto+Sans+SC:wght@100..900&family=Permanent+Marker&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400..700&family=Work+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Space+Mono:wght@400;700&display=swap');
+
+:root{
+  /* ---- cores ---- */
+  --ink: #16232E;            /* texto principal, azul-tinta */
+  --paper: #F3F6FA;          /* fundo base, azul-gelo bem claro */
+  --brand-deep: #1F3A5C;     /* azul-marinho - header, footer, textos de destaque */
+  --brand-mid: #2E6F9E;      /* azul-céu - links, estados secundários */
+  --accent-coral: #FF6B4A;   /* coral - CTAs, ações primárias */
+  --accent-sun: #F4B942;     /* amarelo-sol - selos, promoções */
+  --surface: #FFFFFF;        /* cards */
+  --sand: #ECE4D2;           /* seções alternadas, quentes */
+  --line: rgba(22, 35, 46, 0.12);
+
+  /* ---- tipografia ---- */
+  --font-display: "Fredoka", sans-serif;
+  --font-body: "Work Sans", sans-serif;
+  --font-tag: "Space Mono", monospace;
+}
+
 *{
   list-style: none;
   text-decoration: none;
-  font-family: "Poppins", serif;
+  font-family: var(--font-body);
 }
 
+h1, h2, h3, h4, .font-display{
+  font-family: var(--font-display);
+  color: var(--brand-deep);
+  letter-spacing: -0.01em;
+}
 
 body {
   margin: 0;
-  font-family: "Poppins", serif;
+  font-family: var(--font-body);
+  background-color: var(--paper);
+  color: var(--ink);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   min-height: 100vh;

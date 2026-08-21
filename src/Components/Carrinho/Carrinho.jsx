@@ -16,14 +16,14 @@ const Overlay = styled.div`
 const Aside = styled.div`
   display: ${({ mostrar }) => (mostrar ? "block" : "none")};
   width: 40vw;
-  background-color: #f6f6f6;
+  background-color: var(--paper);
   height: 80vh;
   position: fixed;
   overflow-y: auto;
   right: 0;
   z-index: 10;
   border-radius: 20px 0 0 20px;
-  border: 5px solid #6a6fd8;
+  border: 4px solid var(--brand-deep);
   padding: 1rem;
 
   p {
@@ -46,34 +46,35 @@ const Aside = styled.div`
 
   h2 {
     text-align: center;
-    color: #6a6fd8;
+    color: var(--brand-deep);
   }
 
   li {
     margin: 10px;
     padding: 8px;
-    background-color: #f0f0f0;
-    border: 5px;
-    padding-bottom: 2px;
+    background-color: var(--surface);
+    border-radius: 10px;
+    padding-bottom: 8px;
     display: flex;
     gap: 10px;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
-    transition: ease 0.5s;
+    box-shadow: 0 2px 6px rgba(27, 46, 34, 0.12);
+    transition: ease 0.3s;
     &:hover{
-        box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.6);
-
+        box-shadow: 0 4px 12px rgba(27, 46, 34, 0.2);
     }
 
     
 
     .btn_compra {
       border-radius: 10px;
-      border: solid 2px #6a6fd8;
+      border: solid 2px var(--brand-mid);
+      color: var(--brand-mid);
 
         &:hover{
-            background-color: #bbbdda;
+            background-color: var(--brand-mid);
+            color: #fff;
         }
     }
 

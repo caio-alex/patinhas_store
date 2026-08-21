@@ -29,4 +29,3 @@ const ProdutoLista = ({ produtos }) => {
 
 
 export default ProdutoLista;
-

@@ -4,43 +4,66 @@ import styled from "styled-components";
 
 const Perfil = styled.div`
   text-align: center;
-  padding: 10px;
+  padding: 30px 10px;
+
+  h1{
+    font-size: 1.8rem;
+  }
+
+  > p {
+    color: var(--ink);
+    opacity: 0.7;
+    margin-bottom: 20px;
+  }
 
   .infos {
     justify-content: center;
     display: flex;
-    gap: 5px;
+    gap: 10px;
     flex-direction: column;
     align-items: center;
   }
 
   .info {
-    background-color: #ffffff;
-    border-radius: 5px;
-    padding: 10px;
-    border: #6a6fd8 solid 2px;
-    font-size: 0.8em;
+    background-color: var(--surface);
+    border-radius: 12px;
+    padding: 12px 16px;
+    border: 1px solid var(--line);
+    font-size: 0.9em;
+    text-align: left;
     justify-content: center;
     width: 60vw;
+    max-width: 420px;
     align-items: center;
+
+    strong{
+      color: var(--brand-deep);
+      font-family: var(--font-tag);
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
   }
 
   .info_pessoal {
-    text-align: center;
+    text-align: left;
     justify-content: center;
   }
 
   .contato {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
 
     @media (max-width: 768px) {
       width: 100%;
-      gap: 5px;
+      gap: 10px;
     }
 
     .infoContato {
       width: 30vw;
+      min-width: 160px;
       @media (max-width: 768px) {
         width: 100%;
         gap: 5px;
@@ -49,16 +72,19 @@ const Perfil = styled.div`
   }
 
   .btnAtualizar {
-    padding: 10px;
-    border-radius: 20px;
+    padding: 12px 28px;
+    margin-top: 20px;
+    border-radius: 999px;
     border: none;
-    background-color: #5158d9;
-    transition: transform ease 0.4s;
+    background-color: var(--accent-coral);
+    transition: background-color 0.2s ease, transform 0.15s ease;
     color: #fff;
+    font-weight: 600;
+    cursor: pointer;
 
     &:hover {
-      transform: scale(1.1);
-      background-color: #6a6fd8;
+      transform: translateY(-1px);
+      background-color: #e85b3c;
     }
   }
 `;
@@ -84,34 +110,34 @@ export function Usuario() {
   return (
     <div>
       <Perfil>
-        <h1>Meus Dados</h1>
+        <h1>🐾 Meus Dados</h1>
         <p>Confira os seus dados de cadastro</p>
         <DadosPerfil>
           <div className="infos">
             <p className="info info_pessoal">
-              <strong>Nome: </strong>
+              <strong>Nome</strong>
               <br />
               {dados.nome || "Não informado"}
             </p>
             <p className="info info_pessoal">
-              <strong>Email: </strong>
+              <strong>Email</strong>
               <br />
               {dados.email || "Não informado"}
             </p>
             <p className="info info_pessoal">
-              <strong>Senha: </strong>
+              <strong>Senha</strong>
               <br />
-              {dados.senha || "Não informado"}
+              {dados.senha ? "••••••••" : "Não informado"}
             </p>
           </div>
           <div className="contato">
             <p className="info infoContato">
-              <strong>Cidade: </strong>
+              <strong>Cidade</strong>
               <br />
               {dados.cidade || "Não informado"}
             </p>
             <p className="info infoContato">
-              <strong>Estado: </strong>
+              <strong>Estado</strong>
               <br />
               {dados.estado || "Não informado"}
             </p>
@@ -119,7 +145,7 @@ export function Usuario() {
           
           <div className="infos">
             <p className="info">
-              <strong>Endereço: </strong>
+              <strong>Endereço</strong>
               <br />
               {dados.endereco || "Não informado"}
             </p>
@@ -127,17 +153,17 @@ export function Usuario() {
 
           <div className="contato">
             <p className="info infoContato">
-              <strong>CPF: </strong>
+              <strong>CPF</strong>
               <br />
               {dados.cpf || "Não informado"}
             </p>
             <p className="info infoContato">
-              <strong>Celular: </strong>
+              <strong>Celular</strong>
               <br />
               {dados.celular || "Não informado"}
             </p>
             <p className="info infoContato">
-              <strong>Telefone: </strong>
+              <strong>Telefone</strong>
               <br />
               {dados.telefone || "Não informado"}
             </p>
