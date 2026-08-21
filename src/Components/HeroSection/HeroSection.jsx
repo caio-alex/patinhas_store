@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import cachorroImg from "public/produtos/hero-pets.png";
+
 const Hero = styled.div`
   display: flex;
   align-items: center;
@@ -35,7 +35,7 @@ export function HeroSection() {
             <p>Na Patinhas Store, você encontra tudo o que seu pet precisa para ser feliz e saudável!</p>
         </TextoHero>
         <ImagemHero>
-            <img src={cachorroImg} alt="Cachorro sorrindo"></img>
+            <img src="/produtos/hero-pets.png" alt="Cachorro sorrindo"></img>
         </ImagemHero>
         </Hero>
     )
