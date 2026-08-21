@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import cachorroImg from 'https://png.pngtree.com/png-vector/20240705/ourmid/pngtree-dog-and-cat-friends-portrait-ginger-kitten-sitting-looking-at-each-png-image_12667174.png'; // AJUSTE O CAMINHO!
+import cachorroImg from "../../Images/hero-pets.png";
 const Hero = styled.div`
   display: flex;
   align-items: center;
