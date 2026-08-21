@@ -171,7 +171,7 @@ export const Compra = () => {
 
     // 3. Fazemos a busca na API usando o ID da URL
     useEffect(() => {
-        fetch('http://localhost:3334/produtos')
+        fetch(`${process.env.REACT_APP_API_URL}/produtos`)
             .then((resposta) => resposta.json())
             .then((dados) => {
                 // Garante que é uma lista, igual fizemos na outra tela

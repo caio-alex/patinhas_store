@@ -25,7 +25,7 @@ export default function Produtos() {
   const [produtos, setProdutos] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:3334/produtos')
+    fetch(`${process.env.REACT_APP_API_URL}/produtos`)
       .then((resposta) => resposta.json())
       .then((dados) => {
         console.log("O que veio do Back-End?", dados); // Espiando a resposta
